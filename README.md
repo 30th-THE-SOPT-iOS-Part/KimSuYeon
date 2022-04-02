@@ -1,9 +1,9 @@
 ![깃허브 김수연](https://user-images.githubusercontent.com/61109660/160546752-83e3ddc9-59b1-43b9-9836-d9db2b53666c.png)
 
-### 30기 iOS 파트 커리큘럼🍏    
-| 주차 | 내용 | 브랜치 | PR | 🤷‍♀️ |
+### 30기 iOS 파트 커리큘럼🍏   
+| WEEK | Content | Seminar | Assignment | Refactoring |
 |:----:|:-----:|:----:|:----:|:----:|
-| `1주차` | iOS 개발 입문 : Xcode 기본 사용법, Layout 기초, View 화면 전환 |  |  |  | 
+| `1주차` | iOS 개발 입문 : Xcode 기본 사용법, Layout 기초, View 화면 전환 |[🔖](https://github.com/30th-THE-SOPT-iOS-Part/KimSuYeon/tree/main/30th-Seminar/30th-1week-Seminar)|  |  | 
 | `2주차` | UI 설계 기초(1) : AutoLayout, StackView, TabBarController | |  |  |  | 
 | `3주차` | UI 설계 기초(2) : ScrollView, TableView, CollectionView | |  |  |  | 
 | `4주차` | 서버 통신 기초: 서버와 클라이언트 이해, RESTful API, Alamofire를 활용한 실습 | |  |  |  | 
@@ -12,6 +12,7 @@
 |`7주차`| 서버 통신 및 데이터 전달 심화 : 서버 통신 추가 실습 | | | |
 |`8주차`| 앱잼을 위한 프로젝트 기초 세팅 및 그 외 꿀팁 소개 | | | |
 
+</br>
 
 ### 30기 iOS 파트 세미나 + 과제에서 해보고 싶은 것들🍏
 1. 과제와 코드리뷰 열심히 !
@@ -21,3 +22,6 @@
 5. 서버 : 알라모로 구현한다음, 모듈화 or 모야로 리팩토링 
 6. 기초 잘 다지기 ! 지나갔던 개념들 다시보자 ! 
 7. 유용한 Extension 잘 정리해보기, 나만의 template 만들기 
+8. 코디네이터 패턴 써보기 
+
+아웅 이거 다 할수 있어 ? 못해.. 
