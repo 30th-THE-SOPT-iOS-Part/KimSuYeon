@@ -12,6 +12,8 @@ import Then
 
 class MakePasswordViewController: BaseViewController {
 
+    var userName: String?
+
     private let titleLabel = UILabel().then {
         $0.text = "비밀번호 만들기"
         $0.font = .systemFont(ofSize: 20)
@@ -74,7 +76,7 @@ class MakePasswordViewController: BaseViewController {
         let completeViewAction = UIAction { [weak self] _ in
             let completeVC = CompleteLoginViewController()
             completeVC.modalPresentationStyle = .fullScreen
-            
+            completeVC.userName = self?.userName
             self?.present(completeVC, animated: true)
         }
         nextButton.addAction(completeViewAction, for: .touchUpInside)

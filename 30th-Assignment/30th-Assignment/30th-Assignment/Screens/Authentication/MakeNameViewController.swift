@@ -72,7 +72,10 @@ class MakeNameViewController: BaseViewController {
 
     private func setButtonAction() {
         let pushMakePasswordViewAction = UIAction { [weak self] _ in
-            self?.navigationController?.pushViewController(MakePasswordViewController(), animated: true)
+            let makePasswordVC = MakePasswordViewController()
+            makePasswordVC.userName = self?.userNameTextField.text ?? ""
+
+            self?.navigationController?.pushViewController(makePasswordVC, animated: true)
         }
         nextButton.addAction(pushMakePasswordViewAction, for: .touchUpInside)
     }

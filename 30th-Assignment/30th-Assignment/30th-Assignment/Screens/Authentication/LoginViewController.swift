@@ -162,7 +162,7 @@ class LoginViewController: BaseViewController {
         let completeViewAction = UIAction { [weak self] _ in
             let completeVC = CompleteLoginViewController()
             completeVC.modalPresentationStyle = .fullScreen
-
+            completeVC.userName = self?.emailTextField.text
             self?.present(completeVC, animated: true)
         }
         loginButton.addAction(completeViewAction, for: .touchUpInside)
