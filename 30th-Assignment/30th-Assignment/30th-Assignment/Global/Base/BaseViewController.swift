@@ -29,6 +29,7 @@ class BaseViewController: UIViewController {
 
     func configUI() {
         // View Configuration
+        view.backgroundColor = .white
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
 
