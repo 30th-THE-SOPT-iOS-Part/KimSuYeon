@@ -24,6 +24,12 @@ class LoginViewController: BaseViewController {
         $0.isSecureTextEntry = true
     }
 
+    private let clearTextButton = UIButton().then {
+        $0.setImage(UIImage(systemName: "xmark.circle.fill"), for: .normal)
+        $0.frame = CGRect(x: 0, y: 0, width: 15, height: 15)
+        $0.tintColor = .lightGray
+    }
+
     private let findPasswordButton = UIButton().then {
         $0.setTitle("비밀번호를 잊으셨나요?", for: .normal)
         $0.setTitleColor(.systemBlue, for: .normal)
@@ -67,7 +73,7 @@ class LoginViewController: BaseViewController {
     }
 
     override func render() {
-        view.addSubViews([logoImage, emailTextField, passwordTextField, passwordCheckButton, findPasswordButton, loginButton])
+        view.addSubViews([logoImage, emailTextField, passwordTextField, passwordCheckButton, clearTextButton, findPasswordButton, loginButton])
 
         logoImage.snp.makeConstraints {
             $0.top.equalToSuperview().inset(200)
@@ -90,6 +96,11 @@ class LoginViewController: BaseViewController {
             $0.trailing.equalToSuperview().inset(20)
         }
 
+        clearTextButton.snp.makeConstraints {
+            $0.centerY.equalTo(emailTextField.snp.centerY)
+            $0.trailing.equalToSuperview().inset(25)
+        }
+
         findPasswordButton.snp.makeConstraints {
             $0.top.equalTo(passwordTextField.snp.bottom).offset(15)
             $0.trailing.equalToSuperview().inset(16)
@@ -101,7 +112,8 @@ class LoginViewController: BaseViewController {
         }
     }
 
-    /// 🌀 개인 도전 :  UIAction 사용해보기
+    /// 🌀 개인 도전 :  UIAction 사용해보기 - 메모리 문제 때문에 weak self 써줬는데 불편한거 같기도 은근
+    ///  버튼 Rx.tap이나 press Extension 따로 빼서 쓰는 방법도 있다 / 기본은 addTarget
     private func setButtonAction() {
         let showPasswordAction = UIAction { [weak self] _ in
             /// 심화과제 : 눈 모양 버튼 누르면 비밀번호 secure 모드 해제 !
@@ -109,6 +121,11 @@ class LoginViewController: BaseViewController {
             self?.showPassword()
         }
         passwordCheckButton.addAction(showPasswordAction, for: .touchUpInside)
+
+        let clearTextAction = UIAction { [weak self] _ in
+            self?.emailTextField.text = ""
+        }
+        clearTextButton.addAction(clearTextAction, for: .touchUpInside)
     }
 
     private func showPassword() {
@@ -119,14 +136,29 @@ class LoginViewController: BaseViewController {
         [emailTextField, passwordTextField].forEach {
             $0?.delegate = self
         }
+
+        clearTextButton.isHidden = true
     }
 
 }
 
 extension LoginViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        /// 도전과제(1)
+        /// 텍스트필드에 값 입력할 시, clear 버튼 등장 !
+        if textField == emailTextField {
+            clearTextButton.isHidden = false
+        }
+    }
+
     func textFieldDidEndEditing(_ textField: UITextField) {
+        /// 도전과제 (2)
         /// 텍스트 입력 될 때만 적용하려면 Rx나 NotifiactionCenter 쓰기 .. 일단 귀차나서 패스..
         loginButton.isEnabled = (emailTextField.hasText && passwordTextField.hasText) ? true : false
+        
+        if textField == emailTextField {
+            clearTextButton.isHidden = true
+        }
     }
 
     /// 시뮬이 아닌 실기기에서 키보드로 입력할 경우, 키보드 return 키를 따라서 이동 가능 하게 +  마지막은 종료
