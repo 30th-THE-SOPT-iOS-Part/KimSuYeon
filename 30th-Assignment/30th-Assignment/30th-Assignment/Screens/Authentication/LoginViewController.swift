@@ -62,7 +62,8 @@ class LoginViewController: BaseViewController {
     }
 
     override func configUI() {
-
+        setTextField()
+        loginButton.isEnabled = false
     }
 
     override func render() {
@@ -114,4 +115,27 @@ class LoginViewController: BaseViewController {
         passwordTextField.isSecureTextEntry = passwordCheckButton.isSelected ? false : true
     }
 
+    private func setTextField() {
+        [emailTextField, passwordTextField].forEach {
+            $0?.delegate = self
+        }
+    }
+
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        /// 텍스트 입력 될 때만 적용하려면 Rx나 NotifiactionCenter 쓰기 .. 일단 귀차나서 패스..
+        loginButton.isEnabled = (emailTextField.hasText && passwordTextField.hasText) ? true : false
+    }
+
+    /// 시뮬이 아닌 실기기에서 키보드로 입력할 경우, 키보드 return 키를 따라서 이동 가능 하게 +  마지막은 종료
+    func textFieldShouldReturn (_ textField: UITextField) -> Bool {
+        switch textField {
+        case emailTextField: passwordTextField.becomeFirstResponder()
+        case passwordTextField: passwordTextField.resignFirstResponder()
+        default: break
+        }
+        return true
+    }
 }
