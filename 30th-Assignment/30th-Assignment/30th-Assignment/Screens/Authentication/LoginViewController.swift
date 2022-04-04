@@ -153,6 +153,14 @@ class LoginViewController: BaseViewController {
             self?.navigationController?.pushViewController(MakeNameViewController(), animated: true)
         }
         signUpButton.addAction(pushSignUpViewAction, for: .touchUpInside)
+
+        let completeViewAction = UIAction { [weak self] _ in
+            let completeVC = CompleteLoginViewController()
+            completeVC.modalPresentationStyle = .fullScreen
+
+            self?.present(completeVC, animated: true)
+        }
+        loginButton.addAction(completeViewAction, for: .touchUpInside)
     }
 
     private func showPassword() {
