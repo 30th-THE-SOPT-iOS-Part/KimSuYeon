@@ -14,6 +14,7 @@
 		4DD4DBB327FA1FDA00E54124 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 4DD4DBB227FA1FDA00E54124 /* Then */; };
 		4DD4DBB627FA1FEE00E54124 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4DD4DBB527FA1FEE00E54124 /* SnapKit */; };
 		4DD4DBBB27FA3A0600E54124 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD4DBBA27FA3A0600E54124 /* BaseViewController.swift */; };
+		4DD4DBBD27FA3E6100E54124 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD4DBBC27FA3E6100E54124 /* AuthTextField.swift */; };
 		4DD4DBBF27FA43AC00E54124 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD4DBBE27FA43AC00E54124 /* UIView+.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		4DD4DB9F27FA172000E54124 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DD4DBA127FA172000E54124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DD4DBBA27FA3A0600E54124 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		4DD4DBBC27FA3E6100E54124 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		4DD4DBBE27FA43AC00E54124 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +124,7 @@
 		4DD4DBAD27FA18F700E54124 /* UIComponent */ = {
 			isa = PBXGroup;
 			children = (
+				4DD4DBBC27FA3E6100E54124 /* AuthTextField.swift */,
 			);
 			path = UIComponent;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			files = (
 				4DD4DBBF27FA43AC00E54124 /* UIView+.swift in Sources */,
 				4DD4DBBB27FA3A0600E54124 /* BaseViewController.swift in Sources */,
+				4DD4DBBD27FA3E6100E54124 /* AuthTextField.swift in Sources */,
 				4DD4DB9427FA171D00E54124 /* AppDelegate.swift in Sources */,
 				4DD4DB9627FA171D00E54124 /* SceneDelegate.swift in Sources */,
 			);
