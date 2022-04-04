@@ -74,6 +74,11 @@ class LoginViewController: BaseViewController {
         setButtonAction()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setTextFieldEmpty()
+    }
+
     /// 화면 터치했을 때 텍스트 필드 edit 종료하기
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -175,6 +180,12 @@ class LoginViewController: BaseViewController {
         clearTextButton.isHidden = true
     }
 
+    func setTextFieldEmpty() {
+        /// 뷰 띄울때 텍필 초기화 하기
+        [emailTextField, passwordTextField].forEach {
+            $0?.text = ""
+        }
+    }
 }
 
 extension LoginViewController: UITextFieldDelegate {
