@@ -32,6 +32,7 @@ class MakeNameViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setButtonAction()
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -69,6 +70,12 @@ class MakeNameViewController: BaseViewController {
         }
     }
 
+    private func setButtonAction() {
+        let pushMakePasswordViewAction = UIAction { [weak self] _ in
+            self?.navigationController?.pushViewController(MakePasswordViewController(), animated: true)
+        }
+        nextButton.addAction(pushMakePasswordViewAction, for: .touchUpInside)
+    }
 }
 
 extension MakeNameViewController: UITextFieldDelegate {
