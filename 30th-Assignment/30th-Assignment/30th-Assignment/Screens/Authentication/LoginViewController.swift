@@ -57,6 +57,18 @@ class LoginViewController: BaseViewController {
         $0.configurationUpdateHandler = buttonStateHandler
     }
 
+    private let signUpLabel = UILabel().then {
+        $0.text = "계정이 없으신가요?"
+        $0.textColor = .lightGray
+        $0.font = .systemFont(ofSize: 15)
+    }
+
+    private let signUpButton = UIButton().then {
+        $0.setTitle("가입하기", for: .normal)
+        $0.setTitleColor(.systemBlue, for: .normal)
+        $0.titleLabel?.font = .systemFont(ofSize: 17)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setButtonAction()
@@ -73,7 +85,7 @@ class LoginViewController: BaseViewController {
     }
 
     override func render() {
-        view.addSubViews([logoImage, emailTextField, passwordTextField, passwordCheckButton, clearTextButton, findPasswordButton, loginButton])
+        view.addSubViews([logoImage, emailTextField, passwordTextField, passwordCheckButton, clearTextButton, findPasswordButton, loginButton, signUpLabel, signUpButton])
 
         logoImage.snp.makeConstraints {
             $0.top.equalToSuperview().inset(200)
@@ -110,6 +122,16 @@ class LoginViewController: BaseViewController {
             $0.top.equalTo(findPasswordButton.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(16)
         }
+
+        signUpLabel.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(loginButton.snp.bottom).offset(20)
+        }
+
+        signUpButton.snp.makeConstraints {
+            $0.centerY.equalTo(signUpLabel.snp.centerY)
+            $0.leading.equalTo(signUpLabel.snp.trailing).offset(10)
+        }
     }
 
     /// 🌀 개인 도전 :  UIAction 사용해보기 - 메모리 문제 때문에 weak self 써줬는데 불편한거 같기도 은근
@@ -126,6 +148,11 @@ class LoginViewController: BaseViewController {
             self?.emailTextField.text = ""
         }
         clearTextButton.addAction(clearTextAction, for: .touchUpInside)
+
+        let pushSignUpViewAction = UIAction { [weak self] _ in
+            self?.navigationController?.pushViewController(SignUpViewController(), animated: true)
+        }
+        signUpButton.addAction(pushSignUpViewAction, for: .touchUpInside)
     }
 
     private func showPassword() {
@@ -155,7 +182,7 @@ extension LoginViewController: UITextFieldDelegate {
         /// 도전과제 (2)
         /// 텍스트 입력 될 때만 적용하려면 Rx나 NotifiactionCenter 쓰기 .. 일단 귀차나서 패스..
         loginButton.isEnabled = (emailTextField.hasText && passwordTextField.hasText) ? true : false
-        
+
         if textField == emailTextField {
             clearTextButton.isHidden = true
         }
