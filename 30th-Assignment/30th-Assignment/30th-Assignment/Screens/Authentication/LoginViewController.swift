@@ -24,6 +24,14 @@ class LoginViewController: BaseViewController {
         $0.isSecureTextEntry = true
     }
 
+    private let findPasswordButton = UIButton().then {
+        $0.setTitle("비밀번호를 잊으셨나요?", for: .normal)
+        $0.setTitleColor(.systemBlue, for: .normal)
+        $0.titleLabel?.font = .systemFont(ofSize: 13)
+    }
+
+    private let loginButton = AuthButton(title: "로그인")
+
     /// 🌀 개인 도전 : ButtonHandler 사용해보기
     private let passwordCheckButton = UIButton().then {
         var configuration = UIButton.Configuration.plain()
@@ -58,7 +66,7 @@ class LoginViewController: BaseViewController {
     }
 
     override func render() {
-        view.addSubViews([logoImage, emailTextField, passwordTextField, passwordCheckButton])
+        view.addSubViews([logoImage, emailTextField, passwordTextField, passwordCheckButton, findPasswordButton, loginButton])
 
         logoImage.snp.makeConstraints {
             $0.top.equalToSuperview().inset(200)
@@ -79,6 +87,16 @@ class LoginViewController: BaseViewController {
             /// 알게 된 것 : 코드로 레이아웃 잡을 때 textfield의 centerY가 잡혀있지 않아도 요러케 같은 위치로 설정가넝
             $0.centerY.equalTo(passwordTextField.snp.centerY)
             $0.trailing.equalToSuperview().inset(20)
+        }
+
+        findPasswordButton.snp.makeConstraints {
+            $0.top.equalTo(passwordTextField.snp.bottom).offset(15)
+            $0.trailing.equalToSuperview().inset(16)
+        }
+
+        loginButton.snp.makeConstraints {
+            $0.top.equalTo(findPasswordButton.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(16)
         }
     }
 
