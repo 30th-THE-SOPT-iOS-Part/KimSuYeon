@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4D22C0C927FB74FD005F3A73 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C0C827FB74FD005F3A73 /* AuthButton.swift */; };
 		4D22C0CB27FB8A5E005F3A73 /* MakeNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C0CA27FB8A5E005F3A73 /* MakeNameViewController.swift */; };
+		4D22C0CD27FB8C6C005F3A73 /* MakePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C0CC27FB8C6C005F3A73 /* MakePasswordViewController.swift */; };
 		4DD4DB9427FA171D00E54124 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD4DB9327FA171D00E54124 /* AppDelegate.swift */; };
 		4DD4DB9627FA171D00E54124 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD4DB9527FA171D00E54124 /* SceneDelegate.swift */; };
 		4DD4DB9D27FA172000E54124 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DD4DB9C27FA172000E54124 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		4D22C0C827FB74FD005F3A73 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		4D22C0CA27FB8A5E005F3A73 /* MakeNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeNameViewController.swift; sourceTree = "<group>"; };
+		4D22C0CC27FB8C6C005F3A73 /* MakePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePasswordViewController.swift; sourceTree = "<group>"; };
 		4DD4DB9027FA171D00E54124 /* 30th-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "30th-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DD4DB9327FA171D00E54124 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DD4DB9527FA171D00E54124 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			children = (
 				4DD4DBB827FA39F800E54124 /* LoginViewController.swift */,
 				4D22C0CA27FB8A5E005F3A73 /* MakeNameViewController.swift */,
+				4D22C0CC27FB8C6C005F3A73 /* MakePasswordViewController.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				4DD4DBBB27FA3A0600E54124 /* BaseViewController.swift in Sources */,
 				4DD4DBBD27FA3E6100E54124 /* AuthTextField.swift in Sources */,
 				4DD4DBB927FA39F800E54124 /* LoginViewController.swift in Sources */,
+				4D22C0CD27FB8C6C005F3A73 /* MakePasswordViewController.swift in Sources */,
 				4DD4DB9427FA171D00E54124 /* AppDelegate.swift in Sources */,
 				4DD4DB9627FA171D00E54124 /* SceneDelegate.swift in Sources */,
 			);
