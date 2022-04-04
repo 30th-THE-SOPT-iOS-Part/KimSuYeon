@@ -150,7 +150,7 @@ class LoginViewController: BaseViewController {
         clearTextButton.addAction(clearTextAction, for: .touchUpInside)
 
         let pushSignUpViewAction = UIAction { [weak self] _ in
-            self?.navigationController?.pushViewController(SignUpViewController(), animated: true)
+            self?.navigationController?.pushViewController(MakeNameViewController(), animated: true)
         }
         signUpButton.addAction(pushSignUpViewAction, for: .touchUpInside)
     }
