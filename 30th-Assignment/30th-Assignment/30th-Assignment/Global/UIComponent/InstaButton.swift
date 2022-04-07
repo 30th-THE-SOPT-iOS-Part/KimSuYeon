@@ -26,18 +26,20 @@ class InstaButton: UIButton {
 
         var configuration = UIButton.Configuration.plain()
         configuration.attributedTitle = AttributedString(title, attributes: container)
+        configuration.attributedTitle?.foregroundColor = .white
+
         configuration.background.cornerRadius = 5
         configuration.titleAlignment = .center
-        configuration.baseForegroundColor = .white
+        configuration.background.backgroundColor = .systemBlue
 
         self.configuration = configuration
 
         let buttonStateHandler: UIButton.ConfigurationUpdateHandler = { button in
             switch button.state {
             case .normal:
-                button.configuration?.background.backgroundColor = .systemBlue.withAlphaComponent(1)
+                button.alpha = 1
             case .disabled:
-                button.configuration?.background.backgroundColor = .systemBlue.withAlphaComponent(0.5)
+                button.alpha = 0.5
             default:
                 return
             }

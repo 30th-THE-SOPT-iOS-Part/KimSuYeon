@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class MakeNameViewController: BaseViewController {
+final class MakeNameViewController: BaseViewController {
 
     private let titleLabel = UILabel().then {
         $0.text = "사용자 이름 만들기"
@@ -26,13 +26,25 @@ class MakeNameViewController: BaseViewController {
         $0.textColor = .lightGray
     }
 
-    private let userNameTextField = InstaTextField(placeholder: "사용자 이름")
+    private lazy var userNameTextField = InstaTextField(placeholder: "사용자 이름").then {
+        $0.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+    }
 
-    private let nextButton = InstaButton(title: "다음")
+    private lazy var nextButton = InstaButton(title: "다음").then {
+        $0.isEnabled = false
+
+        let pushMakePasswordViewAction = UIAction { _ in
+            let makePasswordVC = MakePasswordViewController()
+            makePasswordVC.userName = self.userNameTextField.text ?? ""
+
+            self.navigationController?.pushViewController(makePasswordVC, animated: true)
+        }
+
+        $0.addAction(pushMakePasswordViewAction, for: .touchUpInside)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setButtonAction()
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -42,8 +54,6 @@ class MakeNameViewController: BaseViewController {
     override func configUI() {
         view.backgroundColor = .white
         setupBaseNavigationBar()
-        nextButton.isEnabled = false
-        userNameTextField.delegate = self
     }
 
     override func render() {
@@ -69,23 +79,9 @@ class MakeNameViewController: BaseViewController {
             $0.top.equalTo(userNameTextField.snp.bottom).offset(20)
         }
     }
-
-    private func setButtonAction() {
-        let pushMakePasswordViewAction = UIAction { [weak self] _ in
-            let makePasswordVC = MakePasswordViewController()
-            makePasswordVC.userName = self?.userNameTextField.text ?? ""
-
-            self?.navigationController?.pushViewController(makePasswordVC, animated: true)
-        }
-        nextButton.addAction(pushMakePasswordViewAction, for: .touchUpInside)
-    }
-}
-
-extension MakeNameViewController: UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        /// 도전과제 (2)
-        /// 텍스트 입력 될 때만 적용하려면 Rx나 NotifiactionCenter 쓰기 .. 일단 귀차나서 패스..
+    
+    @objc
+    private func textFieldDidChange(_ sender: UITextField) {
         nextButton.isEnabled = userNameTextField.hasText ? true : false
     }
-
 }

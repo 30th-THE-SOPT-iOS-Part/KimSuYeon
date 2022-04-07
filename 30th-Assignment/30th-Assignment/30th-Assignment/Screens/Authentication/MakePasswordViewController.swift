@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class MakePasswordViewController: BaseViewController {
+final class MakePasswordViewController: BaseViewController {
 
     var userName: String?
 
@@ -28,13 +28,26 @@ class MakePasswordViewController: BaseViewController {
         $0.textColor = .lightGray
     }
 
-    private let passwordTextField = InstaTextField(placeholder: "비밀번호")
+    private lazy var passwordTextField = InstaTextField(placeholder: "비밀번호").then {
+        $0.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+    }
 
-    private let nextButton = InstaButton(title: "다음")
+    private lazy var nextButton = InstaButton(title: "다음").then {
+        $0.isEnabled = false
+        let completeViewAction = UIAction { _ in
+            let completeVC = CompleteLoginViewController()
+
+            completeVC.modalPresentationStyle = .fullScreen
+            completeVC.userName = self.userName
+
+            self.present(completeVC, animated: true)
+        }
+
+        $0.addAction(completeViewAction, for: .touchUpInside)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setButtonAction()
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -44,8 +57,6 @@ class MakePasswordViewController: BaseViewController {
     override func configUI() {
         view.backgroundColor = .white
         setupBaseNavigationBar()
-        nextButton.isEnabled = false
-        passwordTextField.delegate = self
     }
 
     override func render() {
@@ -72,20 +83,8 @@ class MakePasswordViewController: BaseViewController {
         }
     }
 
-    private func setButtonAction() {
-        let completeViewAction = UIAction { [weak self] _ in
-            let completeVC = CompleteLoginViewController()
-            completeVC.modalPresentationStyle = .fullScreen
-            completeVC.userName = self?.userName
-            self?.present(completeVC, animated: true)
-        }
-        nextButton.addAction(completeViewAction, for: .touchUpInside)
-    }
-}
-
-extension MakePasswordViewController: UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        /// 도전과제 (2)
+    @objc
+    private func textFieldDidChange(_ sender: UITextField) {
         nextButton.isEnabled = passwordTextField.hasText ? true : false
     }
 }

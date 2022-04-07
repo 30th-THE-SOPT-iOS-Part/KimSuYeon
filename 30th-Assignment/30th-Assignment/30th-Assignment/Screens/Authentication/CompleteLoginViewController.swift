@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class CompleteLoginViewController: BaseViewController {
+final class CompleteLoginViewController: BaseViewController {
 
     var userName: String? {
         didSet {
@@ -35,11 +35,21 @@ class CompleteLoginViewController: BaseViewController {
         $0.textColor = .lightGray
     }
 
-    private let doneButton = InstaButton(title: "완료하기")
+    private lazy var doneButton = InstaButton(title: "완료하기").then {
+        let LoginViewAction = UIAction { _ in
+            
+            guard let presentingVC = self.presentingViewController as? UINavigationController else { return }
+
+            self.dismiss(animated: true) {
+                presentingVC.popToRootViewController(animated: true)
+            }
+        }
+
+        $0.addAction(LoginViewAction, for: .touchUpInside)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setButtonAction()
     }
 
     override func configUI() {
@@ -64,18 +74,6 @@ class CompleteLoginViewController: BaseViewController {
             $0.top.equalTo(descriptionLabel.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(25)
         }
-    }
-
-    private func setButtonAction() {
-        let LoginViewAction = UIAction { [weak self] _ in
-            /// 루트 뷰컨 으로 돌아가는게 안보이게 하려면 ?
-            guard let presentingVC = self?.presentingViewController as? UINavigationController else { return }
-
-            self?.dismiss(animated: true) {
-                presentingVC.popToRootViewController(animated: true)
-            }
-        }
-        doneButton.addAction(LoginViewAction, for: .touchUpInside)
     }
 
     private func applyUsername(to userName: String) {
