@@ -37,14 +37,12 @@ final class CompleteLoginViewController: BaseViewController {
 
     private lazy var doneButton = InstaButton(title: "완료하기").then {
         let LoginViewAction = UIAction { _ in
-            
             guard let presentingVC = self.presentingViewController as? UINavigationController else { return }
 
             self.dismiss(animated: true) {
                 presentingVC.popToRootViewController(animated: true)
             }
         }
-
         $0.addAction(LoginViewAction, for: .touchUpInside)
     }
 

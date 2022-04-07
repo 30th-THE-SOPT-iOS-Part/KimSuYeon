@@ -34,15 +34,14 @@ final class MakePasswordViewController: BaseViewController {
 
     private lazy var nextButton = InstaButton(title: "다음").then {
         $0.isEnabled = false
+        
         let completeViewAction = UIAction { _ in
             let completeVC = CompleteLoginViewController()
 
             completeVC.modalPresentationStyle = .fullScreen
             completeVC.userName = self.userName
-
             self.present(completeVC, animated: true)
         }
-
         $0.addAction(completeViewAction, for: .touchUpInside)
     }
 

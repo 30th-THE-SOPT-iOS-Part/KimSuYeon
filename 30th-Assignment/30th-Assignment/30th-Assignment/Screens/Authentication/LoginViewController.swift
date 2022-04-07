@@ -19,7 +19,6 @@ final class LoginViewController: BaseViewController {
 
     /// 🌀 CustomUI 따로 만들어보기
     private let emailTextField = InstaTextField(placeholder: "전화번호, 사용자 이름 또는 이메일")
-
     private let passwordTextField = InstaTextField(placeholder: "비밀번호").then {
         $0.isSecureTextEntry = true
     }
@@ -32,7 +31,6 @@ final class LoginViewController: BaseViewController {
         let clearTextAction = UIAction { _ in
             self.emailTextField.text = ""
         }
-
         $0.addAction(clearTextAction, for: .touchUpInside)
     }
 
@@ -50,10 +48,8 @@ final class LoginViewController: BaseViewController {
 
             completeVC.modalPresentationStyle = .fullScreen
             completeVC.userName = self.emailTextField.text
-
             self.present(completeVC, animated: true)
         }
-
         $0.addAction(completeViewAction, for: .touchUpInside)
     }
 
@@ -72,14 +68,12 @@ final class LoginViewController: BaseViewController {
                 return
             }
         }
-
         $0.configurationUpdateHandler = buttonStateHandler
 
         let showPasswordAction = UIAction { _ in
             /// 심화과제 : 눈 모양 버튼 누르면 비밀번호 secure 모드 해제 !
             self.showPassword()
         }
-
         $0.addAction(showPasswordAction, for: .touchUpInside)
     }
 
@@ -97,7 +91,6 @@ final class LoginViewController: BaseViewController {
         let pushSignUpViewAction = UIAction { _ in
             self.navigationController?.pushViewController(MakeNameViewController(), animated: true)
         }
-
         $0.addAction(pushSignUpViewAction, for: .touchUpInside)
     }
 
@@ -181,7 +174,6 @@ final class LoginViewController: BaseViewController {
             $0.delegate = self
             $0.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         }
-
         emailTextField.addTarget(self, action: #selector(textFieldDidBegin(_:)), for: .editingDidBegin)
         emailTextField.addTarget(self, action: #selector(textFieldDidEnd(_:)), for: .editingDidEnd)
     }
