@@ -43,6 +43,7 @@ final class LoginViewController: BaseViewController {
     }
 
     private lazy var loginButton = InstaButton(title: "로그인").then {
+        $0.isEnabled = false
 
         let completeViewAction = UIAction { _ in
             let completeVC = CompleteLoginViewController()
@@ -115,15 +116,15 @@ final class LoginViewController: BaseViewController {
     }
 
     override func configUI() {
+        setupBaseNavigationBar()
         setTextField()
-        loginButton.isEnabled = false
     }
 
     override func render() {
         view.addSubViews([logoImage, emailTextField, passwordTextField, passwordCheckButton, clearTextButton, findPasswordButton, loginButton, signUpLabel, signUpButton])
 
         logoImage.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(200)
+            $0.top.equalToSuperview().inset(100)
             $0.centerX.equalToSuperview()
         }
 
