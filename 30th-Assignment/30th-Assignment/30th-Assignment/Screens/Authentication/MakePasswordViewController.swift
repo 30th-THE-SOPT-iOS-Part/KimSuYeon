@@ -28,9 +28,9 @@ class MakePasswordViewController: BaseViewController {
         $0.textColor = .lightGray
     }
 
-    private let passwordTextField = AuthTextField(placeholder: "비밀번호")
+    private let passwordTextField = InstaTextField(placeholder: "비밀번호")
 
-    private let nextButton = AuthButton(title: "다음")
+    private let nextButton = InstaButton(title: "다음")
 
     override func viewDidLoad() {
         super.viewDidLoad()

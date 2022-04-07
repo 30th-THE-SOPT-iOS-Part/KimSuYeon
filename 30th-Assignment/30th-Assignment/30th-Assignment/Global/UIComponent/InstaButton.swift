@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-class AuthButton: UIButton {
+class InstaButton: UIButton {
 
     init(title: String) {
         super.init(frame: .zero)

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D22C0C927FB74FD005F3A73 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C0C827FB74FD005F3A73 /* AuthButton.swift */; };
+		4D22C0C927FB74FD005F3A73 /* InstaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C0C827FB74FD005F3A73 /* InstaButton.swift */; };
 		4D22C0CB27FB8A5E005F3A73 /* MakeNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C0CA27FB8A5E005F3A73 /* MakeNameViewController.swift */; };
 		4D22C0CD27FB8C6C005F3A73 /* MakePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C0CC27FB8C6C005F3A73 /* MakePasswordViewController.swift */; };
 		4D22C0CF27FB8D06005F3A73 /* CompleteLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C0CE27FB8D06005F3A73 /* CompleteLoginViewController.swift */; };
@@ -19,12 +19,12 @@
 		4DD4DBB627FA1FEE00E54124 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4DD4DBB527FA1FEE00E54124 /* SnapKit */; };
 		4DD4DBB927FA39F800E54124 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD4DBB827FA39F800E54124 /* LoginViewController.swift */; };
 		4DD4DBBB27FA3A0600E54124 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD4DBBA27FA3A0600E54124 /* BaseViewController.swift */; };
-		4DD4DBBD27FA3E6100E54124 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD4DBBC27FA3E6100E54124 /* AuthTextField.swift */; };
+		4DD4DBBD27FA3E6100E54124 /* InstaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD4DBBC27FA3E6100E54124 /* InstaTextField.swift */; };
 		4DD4DBBF27FA43AC00E54124 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD4DBBE27FA43AC00E54124 /* UIView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4D22C0C827FB74FD005F3A73 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
+		4D22C0C827FB74FD005F3A73 /* InstaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaButton.swift; sourceTree = "<group>"; };
 		4D22C0CA27FB8A5E005F3A73 /* MakeNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeNameViewController.swift; sourceTree = "<group>"; };
 		4D22C0CC27FB8C6C005F3A73 /* MakePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePasswordViewController.swift; sourceTree = "<group>"; };
 		4D22C0CE27FB8D06005F3A73 /* CompleteLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteLoginViewController.swift; sourceTree = "<group>"; };
@@ -36,7 +36,7 @@
 		4DD4DBA127FA172000E54124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DD4DBB827FA39F800E54124 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4DD4DBBA27FA3A0600E54124 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		4DD4DBBC27FA3E6100E54124 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
+		4DD4DBBC27FA3E6100E54124 /* InstaTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaTextField.swift; sourceTree = "<group>"; };
 		4DD4DBBE27FA43AC00E54124 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,8 +134,8 @@
 		4DD4DBAD27FA18F700E54124 /* UIComponent */ = {
 			isa = PBXGroup;
 			children = (
-				4DD4DBBC27FA3E6100E54124 /* AuthTextField.swift */,
-				4D22C0C827FB74FD005F3A73 /* AuthButton.swift */,
+				4DD4DBBC27FA3E6100E54124 /* InstaTextField.swift */,
+				4D22C0C827FB74FD005F3A73 /* InstaButton.swift */,
 			);
 			path = UIComponent;
 			sourceTree = "<group>";
@@ -240,11 +240,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DD4DBBF27FA43AC00E54124 /* UIView+.swift in Sources */,
-				4D22C0C927FB74FD005F3A73 /* AuthButton.swift in Sources */,
+				4D22C0C927FB74FD005F3A73 /* InstaButton.swift in Sources */,
 				4D22C0CB27FB8A5E005F3A73 /* MakeNameViewController.swift in Sources */,
 				4D22C0CF27FB8D06005F3A73 /* CompleteLoginViewController.swift in Sources */,
 				4DD4DBBB27FA3A0600E54124 /* BaseViewController.swift in Sources */,
-				4DD4DBBD27FA3E6100E54124 /* AuthTextField.swift in Sources */,
+				4DD4DBBD27FA3E6100E54124 /* InstaTextField.swift in Sources */,
 				4DD4DBB927FA39F800E54124 /* LoginViewController.swift in Sources */,
 				4D22C0CD27FB8C6C005F3A73 /* MakePasswordViewController.swift in Sources */,
 				4DD4DB9427FA171D00E54124 /* AppDelegate.swift in Sources */,

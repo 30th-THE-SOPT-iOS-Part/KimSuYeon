@@ -18,9 +18,9 @@ class LoginViewController: BaseViewController {
     }
 
     /// 🌀 개인 도전 : CustomUI 따로 만들어보기
-    private let emailTextField = AuthTextField(placeholder: "전화번호, 사용자 이름 또는 이메일")
+    private let emailTextField = InstaTextField(placeholder: "전화번호, 사용자 이름 또는 이메일")
 
-    private let passwordTextField = AuthTextField(placeholder: "비밀번호").then {
+    private let passwordTextField = InstaTextField(placeholder: "비밀번호").then {
         $0.isSecureTextEntry = true
     }
 
@@ -36,7 +36,7 @@ class LoginViewController: BaseViewController {
         $0.titleLabel?.font = .systemFont(ofSize: 13)
     }
 
-    private let loginButton = AuthButton(title: "로그인")
+    private let loginButton = InstaButton(title: "로그인")
 
     /// 🌀 개인 도전 : ButtonHandler 사용해보기
     private let passwordCheckButton = UIButton().then {

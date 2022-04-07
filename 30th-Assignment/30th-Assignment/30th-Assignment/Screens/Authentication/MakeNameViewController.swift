@@ -26,9 +26,9 @@ class MakeNameViewController: BaseViewController {
         $0.textColor = .lightGray
     }
 
-    private let userNameTextField = AuthTextField(placeholder: "사용자 이름")
+    private let userNameTextField = InstaTextField(placeholder: "사용자 이름")
 
-    private let nextButton = AuthButton(title: "다음")
+    private let nextButton = InstaButton(title: "다음")
 
     override func viewDidLoad() {
         super.viewDidLoad()

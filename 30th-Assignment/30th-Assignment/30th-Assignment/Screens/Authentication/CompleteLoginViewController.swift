@@ -35,7 +35,7 @@ class CompleteLoginViewController: BaseViewController {
         $0.textColor = .lightGray
     }
 
-    private let doneButton = AuthButton(title: "완료하기")
+    private let doneButton = InstaButton(title: "완료하기")
 
     override func viewDidLoad() {
         super.viewDidLoad()

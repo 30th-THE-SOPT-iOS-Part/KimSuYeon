@@ -9,8 +9,9 @@ import UIKit
 
 import SnapKit
 
-class AuthTextField: UITextField {
+class InstaTextField: UITextField {
 
+    // leftspaceview extension 추가해보기
     private let leftSpaceView = UIView(frame: CGRect(x: 0, y: 0, width: 12, height: 50))
 
     init(placeholder: String) {
@@ -32,7 +33,7 @@ class AuthTextField: UITextField {
         layer.cornerRadius = 5
         
         textColor = .black
-        backgroundColor = .white
+        backgroundColor = .systemGray6
         attributedPlaceholder = NSAttributedString(string: placeholder ?? "" , attributes: [.foregroundColor: UIColor.darkGray])
 
         self.snp.makeConstraints {
