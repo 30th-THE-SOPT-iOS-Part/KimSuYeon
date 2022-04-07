@@ -212,7 +212,7 @@ final class LoginViewController: BaseViewController {
 }
 
 extension LoginViewController: UITextFieldDelegate {
-    /// 시뮬이 아닌 실기기에서 키보드로 입력할 경우, 키보드 return 키를 따라서 이동 가능 하게 +  마지막은 종료
+    /// 키보드로 입력할 경우, 키보드 return 키를 따라서 이동 가능 하게 +  마지막은 종료
     func textFieldShouldReturn (_ textField: UITextField) -> Bool {
         switch textField {
         case emailTextField: passwordTextField.becomeFirstResponder()
