@@ -207,7 +207,7 @@ final class LoginViewController: BaseViewController {
 
     @objc
     private func textFieldDidEnd(_ sender: UITextField) {
-        clearTextButton.isHidden = false
+        clearTextButton.isHidden = true
     }
 }
 
