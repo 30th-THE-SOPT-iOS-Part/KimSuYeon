@@ -107,7 +107,7 @@ final class LoginViewController: BaseViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setTextFieldEmpty()
+        intialize()
     }
 
     /// 화면 터치했을 때 텍스트 필드 edit 종료하기
@@ -186,8 +186,9 @@ final class LoginViewController: BaseViewController {
         emailTextField.addTarget(self, action: #selector(textFieldDidEnd(_:)), for: .editingDidEnd)
     }
 
-    func setTextFieldEmpty() {
-        /// 뷰 띄울때 텍필 초기화 하기
+    func intialize() {
+        /// 뷰 띄울때 텍필 초기화 하기 & 버튼 초기화
+        loginButton.isEnabled = false
         [emailTextField, passwordTextField].forEach {
             $0?.text = ""
         }
