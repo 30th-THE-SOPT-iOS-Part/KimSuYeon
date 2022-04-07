@@ -13,7 +13,7 @@ import Then
 final class LoginViewController: BaseViewController {
 
     private let logoImage = UIImageView().then {
-        $0.image = UIImage(named: "Instagram Black Logo")
+        $0.image = ImageLiteral.imgInstagramLogo
         $0.contentMode = .scaleToFill
     }
 
@@ -64,9 +64,9 @@ final class LoginViewController: BaseViewController {
         let buttonStateHandler: UIButton.ConfigurationUpdateHandler = { button in
             switch button.state {
             case .normal:
-                button.configuration?.image = UIImage(named: "password hidden eye icon")
+                button.configuration?.image = ImageLiteral.iconPasswordHidden
             case .selected:
-                button.configuration?.image = UIImage(named: "password shown eye icon")
+                button.configuration?.image = ImageLiteral.iconPasswordShown
             default:
                 return
             }

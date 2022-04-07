@@ -21,6 +21,7 @@
 		4DD4DBBB27FA3A0600E54124 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD4DBBA27FA3A0600E54124 /* BaseViewController.swift */; };
 		4DD4DBBD27FA3E6100E54124 /* InstaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD4DBBC27FA3E6100E54124 /* InstaTextField.swift */; };
 		4DD4DBBF27FA43AC00E54124 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD4DBBE27FA43AC00E54124 /* UIView+.swift */; };
+		4DF86F5827FF72DB009DCFAA /* ImageLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF86F5727FF72DB009DCFAA /* ImageLiteral.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		4DD4DBBA27FA3A0600E54124 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4DD4DBBC27FA3E6100E54124 /* InstaTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaTextField.swift; sourceTree = "<group>"; };
 		4DD4DBBE27FA43AC00E54124 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		4DF86F5727FF72DB009DCFAA /* ImageLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiteral.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		4DD4DBA727FA17E200E54124 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				4DF86F5627FF72C5009DCFAA /* Literal */,
 				4DD4DBA927FA187800E54124 /* Base */,
 				4DD4DBAB27FA18A400E54124 /* Extension */,
 				4DD4DBAD27FA18F700E54124 /* UIComponent */,
@@ -159,6 +162,14 @@
 				4D22C0CE27FB8D06005F3A73 /* CompleteLoginViewController.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		4DF86F5627FF72C5009DCFAA /* Literal */ = {
+			isa = PBXGroup;
+			children = (
+				4DF86F5727FF72DB009DCFAA /* ImageLiteral.swift */,
+			);
+			path = Literal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +253,7 @@
 				4DD4DBBF27FA43AC00E54124 /* UIView+.swift in Sources */,
 				4D22C0C927FB74FD005F3A73 /* InstaButton.swift in Sources */,
 				4D22C0CB27FB8A5E005F3A73 /* MakeNameViewController.swift in Sources */,
+				4DF86F5827FF72DB009DCFAA /* ImageLiteral.swift in Sources */,
 				4D22C0CF27FB8D06005F3A73 /* CompleteLoginViewController.swift in Sources */,
 				4DD4DBBB27FA3A0600E54124 /* BaseViewController.swift in Sources */,
 				4DD4DBBD27FA3E6100E54124 /* InstaTextField.swift in Sources */,
