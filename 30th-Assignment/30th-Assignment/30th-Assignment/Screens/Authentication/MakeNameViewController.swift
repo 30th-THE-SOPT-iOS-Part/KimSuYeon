@@ -27,6 +27,7 @@ final class MakeNameViewController: BaseViewController {
     }
 
     private lazy var userNameTextField = InstaTextField(placeholder: "사용자 이름").then {
+        $0.setClearTextButton()
         $0.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
 
