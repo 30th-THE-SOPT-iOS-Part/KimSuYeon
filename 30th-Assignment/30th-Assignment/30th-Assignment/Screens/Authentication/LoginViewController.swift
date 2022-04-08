@@ -18,20 +18,13 @@ final class LoginViewController: BaseViewController {
     }
 
     /// 🌀 CustomUI 따로 만들어보기
-    private let emailTextField = InstaTextField(placeholder: "전화번호, 사용자 이름 또는 이메일")
+    private let emailTextField = InstaTextField(placeholder: "전화번호, 사용자 이름 또는 이메일").then {
+        $0.setClearTextButton()
+    }
+    
     private let passwordTextField = InstaTextField(placeholder: "비밀번호").then {
         $0.isSecureTextEntry = true
-    }
-
-    private lazy var clearTextButton = UIButton().then {
-        $0.setImage(UIImage(systemName: "xmark.circle.fill"), for: .normal)
-        $0.frame = CGRect(x: 0, y: 0, width: 15, height: 15)
-        $0.tintColor = .lightGray
-
-        let clearTextAction = UIAction { _ in
-            self.emailTextField.text = ""
-        }
-        $0.addAction(clearTextAction, for: .touchUpInside)
+        $0.setPasswordCheckButton()
     }
 
     private let findPasswordButton = UIButton().then {
@@ -51,30 +44,6 @@ final class LoginViewController: BaseViewController {
             self.present(completeVC, animated: true)
         }
         $0.addAction(completeViewAction, for: .touchUpInside)
-    }
-
-    /// 🌀 ButtonHandler 사용해보기
-    private lazy var passwordCheckButton = UIButton().then {
-        var configuration = UIButton.Configuration.plain()
-        $0.configuration = configuration
-
-        let buttonStateHandler: UIButton.ConfigurationUpdateHandler = { button in
-            switch button.state {
-            case .normal:
-                button.configuration?.image = ImageLiteral.iconPasswordHidden
-            case .selected:
-                button.configuration?.image = ImageLiteral.iconPasswordShown
-            default:
-                return
-            }
-        }
-        $0.configurationUpdateHandler = buttonStateHandler
-
-        let showPasswordAction = UIAction { _ in
-            /// 심화과제 : 눈 모양 버튼 누르면 비밀번호 secure 모드 해제 !
-            self.showPassword()
-        }
-        $0.addAction(showPasswordAction, for: .touchUpInside)
     }
 
     private let signUpLabel = UILabel().then {
@@ -114,7 +83,7 @@ final class LoginViewController: BaseViewController {
     }
 
     override func render() {
-        view.addSubViews([logoImage, emailTextField, passwordTextField, passwordCheckButton, clearTextButton, findPasswordButton, loginButton, signUpLabel, signUpButton])
+        view.addSubViews([logoImage, emailTextField, passwordTextField, findPasswordButton, loginButton, signUpLabel, signUpButton])
 
         logoImage.snp.makeConstraints {
             $0.top.equalToSuperview().inset(100)
@@ -129,16 +98,6 @@ final class LoginViewController: BaseViewController {
         passwordTextField.snp.makeConstraints {
             $0.top.equalTo(emailTextField.snp.bottom).offset(10)
             $0.leading.trailing.equalToSuperview().inset(16)
-        }
-
-        passwordCheckButton.snp.makeConstraints {
-            $0.centerY.equalTo(passwordTextField.snp.centerY)
-            $0.trailing.equalToSuperview().inset(20)
-        }
-
-        clearTextButton.snp.makeConstraints {
-            $0.centerY.equalTo(emailTextField.snp.centerY)
-            $0.trailing.equalToSuperview().inset(25)
         }
 
         findPasswordButton.snp.makeConstraints {
@@ -162,20 +121,11 @@ final class LoginViewController: BaseViewController {
         }
     }
 
-    private func showPassword() {
-        passwordCheckButton.isSelected.toggle()
-        passwordTextField.isSecureTextEntry = passwordCheckButton.isSelected ? false : true
-    }
-
     private func setTextField() {
-        clearTextButton.isHidden = true
-
         [emailTextField, passwordTextField].forEach {
             $0.delegate = self
             $0.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         }
-        emailTextField.addTarget(self, action: #selector(textFieldDidBegin(_:)), for: .editingDidBegin)
-        emailTextField.addTarget(self, action: #selector(textFieldDidEnd(_:)), for: .editingDidEnd)
     }
 
     func intialize() {
@@ -187,21 +137,9 @@ final class LoginViewController: BaseViewController {
     }
 
     @objc
-    private func textFieldDidChange(_ sender: UITextField) {
+    private func textFieldDidChange(_ sender: InstaTextField) {
         /// 도전과제 (2)
         loginButton.isEnabled = (emailTextField.hasText && passwordTextField.hasText) ? true : false
-    }
-
-    @objc
-    private func textFieldDidBegin(_ sender: UITextField) {
-        /// 도전과제(1)
-        /// 텍스트필드에 값 입력할 시, clear 버튼 등장 !
-        clearTextButton.isHidden = false
-    }
-
-    @objc
-    private func textFieldDidEnd(_ sender: UITextField) {
-        clearTextButton.isHidden = true
     }
 }
 
