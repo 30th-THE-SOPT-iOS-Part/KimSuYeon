@@ -17,6 +17,10 @@
 		4D729CC827F8171300399139 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 4D729CC727F8171300399139 /* Then */; };
 		4D729CCC27F830BD00399139 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D729CCB27F830BC00399139 /* SecondViewController.swift */; };
 		4D729CCE27F830CB00399139 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D729CCD27F830CB00399139 /* ThirdViewController.swift */; };
+		4D83A09828015984008217E5 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D83A09728015984008217E5 /* TabBarController.swift */; };
+		4D83A09B280161E1008217E5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D83A09A280161E1008217E5 /* HomeViewController.swift */; };
+		4D83A09D28016200008217E5 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D83A09C280161FF008217E5 /* UserViewController.swift */; };
+		4D83A09F28016575008217E5 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D83A09E28016575008217E5 /* ImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		4D729CBD27F808F600399139 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D729CCB27F830BC00399139 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		4D729CCD27F830CB00399139 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		4D83A09728015984008217E5 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		4D83A09A280161E1008217E5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4D83A09C280161FF008217E5 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		4D83A09E28016575008217E5 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,8 @@
 		4D729CAE27F808F400399139 /* 30th-1week-Seminar */ = {
 			isa = PBXGroup;
 			children = (
+				4D83A099280161CA008217E5 /* Screen */,
+				4D83A09628015943008217E5 /* Tabbar */,
 				4D729CAF27F808F400399139 /* AppDelegate.swift */,
 				4D729CB127F808F400399139 /* SceneDelegate.swift */,
 				4D729CB327F808F400399139 /* ViewController.swift */,
@@ -75,6 +85,24 @@
 				4D729CCD27F830CB00399139 /* ThirdViewController.swift */,
 			);
 			path = "30th-1week-Seminar";
+			sourceTree = "<group>";
+		};
+		4D83A09628015943008217E5 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				4D83A09728015984008217E5 /* TabBarController.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		4D83A099280161CA008217E5 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				4D83A09A280161E1008217E5 /* HomeViewController.swift */,
+				4D83A09C280161FF008217E5 /* UserViewController.swift */,
+				4D83A09E28016575008217E5 /* ImageViewController.swift */,
+			);
+			path = Screen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,9 +185,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D729CCC27F830BD00399139 /* SecondViewController.swift in Sources */,
+				4D83A09F28016575008217E5 /* ImageViewController.swift in Sources */,
+				4D83A09D28016200008217E5 /* UserViewController.swift in Sources */,
 				4D729CB427F808F400399139 /* ViewController.swift in Sources */,
 				4D729CCE27F830CB00399139 /* ThirdViewController.swift in Sources */,
+				4D83A09828015984008217E5 /* TabBarController.swift in Sources */,
 				4D729CB027F808F400399139 /* AppDelegate.swift in Sources */,
+				4D83A09B280161E1008217E5 /* HomeViewController.swift in Sources */,
 				4D729CB227F808F400399139 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
