@@ -82,6 +82,6 @@ final class MakeNameViewController: BaseViewController {
     
     @objc
     private func textFieldDidChange(_ sender: UITextField) {
-        nextButton.isEnabled = userNameTextField.hasText ? true : false
+        nextButton.isEnabled = userNameTextField.hasText
     }
 }

@@ -139,7 +139,7 @@ final class LoginViewController: BaseViewController {
     @objc
     private func textFieldDidChange(_ sender: InstaTextField) {
         /// 도전과제 (2)
-        loginButton.isEnabled = (emailTextField.hasText && passwordTextField.hasText) ? true : false
+        loginButton.isEnabled = [emailTextField, passwordTextField].allSatisfy { $0.hasText }
     }
 }
 
