@@ -31,8 +31,8 @@ final class LoginViewController: BaseViewController {
 
     private let findPasswordButton = UIButton().then {
         $0.setTitle("비밀번호를 잊으셨나요?", for: .normal)
-        $0.setTitleColor(.systemBlue, for: .normal)
-        $0.titleLabel?.font = .systemFont(ofSize: 13)
+        $0.setTitleColor(UIColor(red: 0.216, green: 0.592, blue: 0.937, alpha: 1), for: .normal)
+        $0.titleLabel?.font = .systemFont(ofSize: 10, weight: .semibold)
     }
 
     private lazy var loginButton = InstaButton(title: "로그인").then {
@@ -50,14 +50,14 @@ final class LoginViewController: BaseViewController {
 
     private let signUpLabel = UILabel().then {
         $0.text = "계정이 없으신가요?"
-        $0.textColor = .lightGray
-        $0.font = .systemFont(ofSize: 15)
+        $0.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
+        $0.font = .systemFont(ofSize: 14)
     }
 
     private lazy var signUpButton = UIButton().then {
         $0.setTitle("가입하기", for: .normal)
-        $0.setTitleColor(.systemBlue, for: .normal)
-        $0.titleLabel?.font = .systemFont(ofSize: 17)
+        $0.setTitleColor(UIColor(red: 0.216, green: 0.592, blue: 0.937, alpha: 1), for: .normal)
+        $0.titleLabel?.font = .systemFont(ofSize: 14)
 
         let pushSignUpViewAction = UIAction { _ in
             self.navigationController?.pushViewController(MakeNameViewController(), animated: true)
@@ -88,38 +88,38 @@ final class LoginViewController: BaseViewController {
         view.addSubViews([logoImage, emailTextField, passwordTextField, findPasswordButton, loginButton, signUpLabel, signUpButton])
 
         logoImage.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(100)
+            $0.top.equalToSuperview().inset(78)
             $0.centerX.equalToSuperview()
         }
 
         emailTextField.snp.makeConstraints {
-            $0.top.equalTo(logoImage.snp.bottom).offset(50)
+            $0.top.equalTo(logoImage.snp.bottom).offset(40)
             $0.leading.trailing.equalToSuperview().inset(16)
         }
 
         passwordTextField.snp.makeConstraints {
-            $0.top.equalTo(emailTextField.snp.bottom).offset(10)
+            $0.top.equalTo(emailTextField.snp.bottom).offset(12)
             $0.leading.trailing.equalToSuperview().inset(16)
         }
 
         findPasswordButton.snp.makeConstraints {
-            $0.top.equalTo(passwordTextField.snp.bottom).offset(15)
+            $0.top.equalTo(passwordTextField.snp.bottom).offset(13)
             $0.trailing.equalToSuperview().inset(16)
         }
 
         loginButton.snp.makeConstraints {
-            $0.top.equalTo(findPasswordButton.snp.bottom).offset(20)
+            $0.top.equalTo(findPasswordButton.snp.bottom).offset(32)
             $0.leading.trailing.equalToSuperview().inset(16)
         }
 
         signUpLabel.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
-            $0.top.equalTo(loginButton.snp.bottom).offset(20)
+            $0.leading.equalToSuperview().inset(105)
+            $0.top.equalTo(loginButton.snp.bottom).offset(37)
         }
 
         signUpButton.snp.makeConstraints {
             $0.centerY.equalTo(signUpLabel.snp.centerY)
-            $0.leading.equalTo(signUpLabel.snp.trailing).offset(10)
+            $0.leading.equalTo(signUpLabel.snp.trailing).offset(5)
         }
     }
 

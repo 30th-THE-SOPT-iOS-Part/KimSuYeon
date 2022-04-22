@@ -63,11 +63,11 @@ class InstaTextField: UITextField {
         leftViewMode = .always
 
         layer.borderWidth = 1
-        layer.borderColor = UIColor.systemGray4.cgColor
+        layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
         layer.cornerRadius = 5
         
         textColor = .black
-        backgroundColor = .systemGray6
+        backgroundColor = UIColor(red: 0.98, green: 0.98, blue: 0.98, alpha: 1)
         attributedPlaceholder = NSAttributedString(string: placeholder ?? "" , attributes: [.foregroundColor: UIColor.systemGray3])
 
         self.snp.makeConstraints {

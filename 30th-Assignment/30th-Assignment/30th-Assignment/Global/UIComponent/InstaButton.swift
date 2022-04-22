@@ -22,7 +22,7 @@ class InstaButton: UIButton {
 
     private func setUI(title: String) {
         var container = AttributeContainer()
-        container.font = .systemFont(ofSize: 16)
+        container.font = .systemFont(ofSize: 14, weight: .semibold)
 
         var configuration = UIButton.Configuration.plain()
         configuration.attributedTitle = AttributedString(title, attributes: container)
