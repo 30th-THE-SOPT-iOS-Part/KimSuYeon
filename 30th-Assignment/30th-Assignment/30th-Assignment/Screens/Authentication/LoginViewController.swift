@@ -18,11 +18,13 @@ final class LoginViewController: BaseViewController {
     }
 
     /// 🌀 CustomUI 따로 만들어보기
-    private let emailTextField = InstaTextField(placeholder: "전화번호, 사용자 이름 또는 이메일").then {
+    private let emailTextField = InstaTextField().then {
+        $0.setPlaceholder(placeholder: "전화번호, 사용자 이름 또는 이메일")
         $0.setClearTextButton()
     }
     
-    private let passwordTextField = InstaTextField(placeholder: "비밀번호").then {
+    private let passwordTextField = InstaTextField().then {
+        $0.setPlaceholder(placeholder: "비밀번호")
         $0.isSecureTextEntry = true
         $0.setPasswordCheckButton()
     }

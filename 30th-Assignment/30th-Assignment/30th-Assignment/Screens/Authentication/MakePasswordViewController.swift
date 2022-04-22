@@ -28,7 +28,8 @@ final class MakePasswordViewController: BaseViewController {
         $0.textColor = .lightGray
     }
 
-    private lazy var passwordTextField = InstaTextField(placeholder: "비밀번호").then {
+    private lazy var passwordTextField = InstaTextField().then {
+        $0.setPlaceholder(placeholder: "비밀번호")
         $0.isSecureTextEntry = true
         $0.setPasswordCheckButton()
         $0.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)

@@ -49,9 +49,8 @@ class InstaTextField: UITextField {
         $0.addAction(showPasswordAction, for: .touchUpInside)
     }
 
-    init(placeholder: String) {
+    init() {
         super.init(frame: .zero)
-        self.placeholder = placeholder
         setUI()
     }
 
@@ -109,5 +108,9 @@ class InstaTextField: UITextField {
     private func showPassword() {
         passwordCheckButton.isSelected.toggle()
         self.isSecureTextEntry = passwordCheckButton.isSelected ? false : true
+    }
+
+    func setPlaceholder(placeholder: String) {
+        self.placeholder = placeholder
     }
 }
