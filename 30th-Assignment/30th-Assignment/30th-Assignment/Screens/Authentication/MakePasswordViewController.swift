@@ -59,6 +59,7 @@ final class MakePasswordViewController: BaseViewController {
     override func configUI() {
         view.backgroundColor = .white
         setupBaseNavigationBar()
+        setupNavigationBar()
     }
 
     override func render() {
@@ -83,6 +84,10 @@ final class MakePasswordViewController: BaseViewController {
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.top.equalTo(passwordTextField.snp.bottom).offset(20)
         }
+    }
+
+    private func setupNavigationBar() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: BackButton(present: self))
     }
 
     @objc
