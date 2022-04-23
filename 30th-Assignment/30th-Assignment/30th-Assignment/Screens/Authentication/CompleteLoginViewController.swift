@@ -38,10 +38,10 @@ final class CompleteLoginViewController: BaseViewController {
 
     private lazy var doneButton = InstaButton(title: "완료하기").then {
         let LoginViewAction = UIAction { _ in
-            guard let presentingVC = self.presentingViewController as? UINavigationController else { return }
-            
-            presentingVC.popToRootViewController(animated: true)
-            self.dismiss(animated: true)
+            let tabBarController = TabBarController()
+
+            tabBarController.modalPresentationStyle = .fullScreen
+            self.present(tabBarController, animated: true)
         }
         $0.addAction(LoginViewAction, for: .touchUpInside)
     }
@@ -98,7 +98,6 @@ final class CompleteLoginViewController: BaseViewController {
     }
 
     @objc func handleTapGesture(_ sender: UITapGestureRecognizer) {
-        print("탭탭")
         guard let presentingVC = self.presentingViewController as? UINavigationController else { return }
 
         presentingVC.popToRootViewController(animated: true)

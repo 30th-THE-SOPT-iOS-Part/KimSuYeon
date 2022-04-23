@@ -12,6 +12,12 @@
 		4D22C0CD27FB8C6C005F3A73 /* MakePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C0CC27FB8C6C005F3A73 /* MakePasswordViewController.swift */; };
 		4D22C0CF27FB8D06005F3A73 /* CompleteLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C0CE27FB8D06005F3A73 /* CompleteLoginViewController.swift */; };
 		4DD40B2328136965006CABC1 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD40B2228136965006CABC1 /* BackButton.swift */; };
+		4DD40B26281379D7006CABC1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD40B25281379D7006CABC1 /* TabBarController.swift */; };
+		4DD40B2E28137A8B006CABC1 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD40B2D28137A8B006CABC1 /* FeedViewController.swift */; };
+		4DD40B3028137A9A006CABC1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD40B2F28137A9A006CABC1 /* SearchViewController.swift */; };
+		4DD40B3228137AAD006CABC1 /* ReelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD40B3128137AAD006CABC1 /* ReelsViewController.swift */; };
+		4DD40B3428137ABA006CABC1 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD40B3328137ABA006CABC1 /* ShopViewController.swift */; };
+		4DD40B3628137AC4006CABC1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD40B3528137AC4006CABC1 /* ProfileViewController.swift */; };
 		4DD4DB9427FA171D00E54124 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD4DB9327FA171D00E54124 /* AppDelegate.swift */; };
 		4DD4DB9627FA171D00E54124 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD4DB9527FA171D00E54124 /* SceneDelegate.swift */; };
 		4DD4DB9D27FA172000E54124 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DD4DB9C27FA172000E54124 /* Assets.xcassets */; };
@@ -31,6 +37,12 @@
 		4D22C0CC27FB8C6C005F3A73 /* MakePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePasswordViewController.swift; sourceTree = "<group>"; };
 		4D22C0CE27FB8D06005F3A73 /* CompleteLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteLoginViewController.swift; sourceTree = "<group>"; };
 		4DD40B2228136965006CABC1 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		4DD40B25281379D7006CABC1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		4DD40B2D28137A8B006CABC1 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		4DD40B2F28137A9A006CABC1 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		4DD40B3128137AAD006CABC1 /* ReelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelsViewController.swift; sourceTree = "<group>"; };
+		4DD40B3328137ABA006CABC1 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		4DD40B3528137AC4006CABC1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4DD4DB9027FA171D00E54124 /* 30th-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "30th-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DD4DB9327FA171D00E54124 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DD4DB9527FA171D00E54124 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +69,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4DD40B24281379AB006CABC1 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				4DD40B25281379D7006CABC1 /* TabBarController.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		4DD40B2828137A0E006CABC1 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				4DD40B3528137AC4006CABC1 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		4DD40B2928137A17006CABC1 /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				4DD40B3328137ABA006CABC1 /* ShopViewController.swift */,
+			);
+			path = Shop;
+			sourceTree = "<group>";
+		};
+		4DD40B2A28137A2A006CABC1 /* Reels */ = {
+			isa = PBXGroup;
+			children = (
+				4DD40B3128137AAD006CABC1 /* ReelsViewController.swift */,
+			);
+			path = Reels;
+			sourceTree = "<group>";
+		};
+		4DD40B2B28137A65006CABC1 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				4DD40B2F28137A9A006CABC1 /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		4DD40B2C28137A6D006CABC1 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				4DD40B2D28137A8B006CABC1 /* FeedViewController.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
 		4DD4DB8727FA171D00E54124 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +159,12 @@
 		4DD4DBA827FA17F200E54124 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				4DD40B24281379AB006CABC1 /* Tabbar */,
+				4DD40B2C28137A6D006CABC1 /* Feed */,
+				4DD40B2B28137A65006CABC1 /* Search */,
+				4DD40B2A28137A2A006CABC1 /* Reels */,
+				4DD40B2928137A17006CABC1 /* Shop */,
+				4DD40B2828137A0E006CABC1 /* Profile */,
 				4DD4DBB727FA39A000E54124 /* Authentication */,
 			);
 			path = Screens;
@@ -253,17 +319,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DD40B3028137A9A006CABC1 /* SearchViewController.swift in Sources */,
 				4DD4DBBF27FA43AC00E54124 /* UIView+.swift in Sources */,
+				4DD40B26281379D7006CABC1 /* TabBarController.swift in Sources */,
 				4D22C0C927FB74FD005F3A73 /* InstaButton.swift in Sources */,
+				4DD40B3428137ABA006CABC1 /* ShopViewController.swift in Sources */,
 				4D22C0CB27FB8A5E005F3A73 /* MakeNameViewController.swift in Sources */,
+				4DD40B3628137AC4006CABC1 /* ProfileViewController.swift in Sources */,
 				4DF86F5827FF72DB009DCFAA /* ImageLiteral.swift in Sources */,
 				4D22C0CF27FB8D06005F3A73 /* CompleteLoginViewController.swift in Sources */,
+				4DD40B2E28137A8B006CABC1 /* FeedViewController.swift in Sources */,
 				4DD4DBBB27FA3A0600E54124 /* BaseViewController.swift in Sources */,
 				4DD4DBBD27FA3E6100E54124 /* InstaTextField.swift in Sources */,
 				4DD4DBB927FA39F800E54124 /* LoginViewController.swift in Sources */,
 				4DD40B2328136965006CABC1 /* BackButton.swift in Sources */,
 				4D22C0CD27FB8C6C005F3A73 /* MakePasswordViewController.swift in Sources */,
 				4DD4DB9427FA171D00E54124 /* AppDelegate.swift in Sources */,
+				4DD40B3228137AAD006CABC1 /* ReelsViewController.swift in Sources */,
 				4DD4DB9627FA171D00E54124 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
