@@ -10,8 +10,8 @@ import UIKit
 enum ImageLiteral {
     static var btnBackBlack: UIImage { .load(named: "back_button")}
 
-    static var iconPasswordHidden: UIImage { .load(named: "password hidden eye icon")}
-    static var iconPasswordShown: UIImage { .load(named: "password shown eye icon")}
+    static var iconPasswordHidden: UIImage { .load(named: "icn_password_hidden")}
+    static var iconPasswordShown: UIImage { .load(named: "icn_password_shown")}
 
     static var imgInstagramLogo: UIImage { .load(named: "Instagram Black Logo")}
 }
