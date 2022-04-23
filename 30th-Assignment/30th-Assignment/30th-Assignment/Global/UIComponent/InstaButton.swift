@@ -48,7 +48,7 @@ class InstaButton: UIButton {
         self.configurationUpdateHandler = buttonStateHandler
 
         self.snp.makeConstraints {
-            $0.height.equalTo(50)
+            $0.height.equalTo(44)
         }
     }
 

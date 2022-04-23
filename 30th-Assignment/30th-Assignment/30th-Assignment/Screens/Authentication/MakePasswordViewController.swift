@@ -67,22 +67,22 @@ final class MakePasswordViewController: BaseViewController {
 
         titleLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalToSuperview().inset(100)
+            $0.top.equalToSuperview().inset(11)
         }
 
         descriptionLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(titleLabel.snp.bottom).offset(20)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(11)
         }
 
         passwordTextField.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(16)
-            $0.top.equalTo(descriptionLabel.snp.bottom).offset(20)
+            $0.top.equalTo(descriptionLabel.snp.bottom).offset(22)
         }
 
         nextButton.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(16)
-            $0.top.equalTo(passwordTextField.snp.bottom).offset(20)
+            $0.top.equalTo(passwordTextField.snp.bottom).offset(22)
         }
     }
 

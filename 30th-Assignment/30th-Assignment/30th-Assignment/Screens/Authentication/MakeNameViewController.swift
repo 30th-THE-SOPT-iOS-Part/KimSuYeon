@@ -14,7 +14,7 @@ final class MakeNameViewController: BaseViewController {
 
     private let titleLabel = UILabel().then {
         $0.text = "사용자 이름 만들기"
-        $0.font = .systemFont(ofSize: 20)
+        $0.font = .systemFont(ofSize: 24)
         $0.textColor = .black
     }
 
@@ -22,7 +22,7 @@ final class MakeNameViewController: BaseViewController {
         $0.text = "새 계정에 사용할 사용자 이름을 선택하세요. 나중에\n언제든지 변경할 수 있습니다."
         $0.numberOfLines = 2
         $0.textAlignment = .center
-        $0.font = .systemFont(ofSize: 13)
+        $0.font = .systemFont(ofSize: 12)
         $0.textColor = .lightGray
     }
 
@@ -63,22 +63,22 @@ final class MakeNameViewController: BaseViewController {
 
         titleLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalToSuperview().inset(100)
+            $0.top.equalToSuperview().inset(11)
         }
 
         descriptionLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(titleLabel.snp.bottom).offset(20)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(11)
         }
 
         userNameTextField.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(16)
-            $0.top.equalTo(descriptionLabel.snp.bottom).offset(20)
+            $0.top.equalTo(descriptionLabel.snp.bottom).offset(22)
         }
 
         nextButton.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(16)
-            $0.top.equalTo(userNameTextField.snp.bottom).offset(20)
+            $0.top.equalTo(userNameTextField.snp.bottom).offset(22)
         }
     }
 

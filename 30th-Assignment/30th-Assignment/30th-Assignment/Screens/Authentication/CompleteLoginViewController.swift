@@ -23,7 +23,8 @@ final class CompleteLoginViewController: BaseViewController {
     private let titleLabel = UILabel().then {
         $0.text = "땡땡땡님 Instargram에 \n 오신 것을 환영합니다"
         $0.numberOfLines = 2
-        $0.font = .systemFont(ofSize: 20)
+        $0.textAlignment = .center
+        $0.font = .systemFont(ofSize: 24)
         $0.textColor = .black
     }
 
@@ -31,7 +32,7 @@ final class CompleteLoginViewController: BaseViewController {
         $0.text = "언제든지 연락처 정보와 사용자 이름을 변경할 수 있습니다."
         $0.numberOfLines = 1
         $0.textAlignment = .center
-        $0.font = .systemFont(ofSize: 13)
+        $0.font = .systemFont(ofSize: 12)
         $0.textColor = .lightGray
     }
 
@@ -45,6 +46,13 @@ final class CompleteLoginViewController: BaseViewController {
         $0.addAction(LoginViewAction, for: .touchUpInside)
     }
 
+    private let otherAccountLabel = UILabel().then {
+        $0.text = "다른 계정으로 로그인하기"
+        $0.textColor = UIColor(red: 0.216, green: 0.592, blue: 0.937, alpha: 1)
+        $0.textAlignment = .center
+        $0.font = .systemFont(ofSize: 14, weight: .regular)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -52,14 +60,15 @@ final class CompleteLoginViewController: BaseViewController {
     override func configUI() {
         view.backgroundColor = .white
         setupBaseNavigationBar()
+        setGesture()
     }
 
     override func render() {
-        view.addSubViews([titleLabel, descriptionLabel, doneButton])
+        view.addSubViews([titleLabel, descriptionLabel, doneButton, otherAccountLabel])
 
         titleLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalToSuperview().inset(300)
+            $0.top.equalToSuperview().inset(310)
         }
 
         descriptionLabel.snp.makeConstraints {
@@ -69,11 +78,30 @@ final class CompleteLoginViewController: BaseViewController {
 
         doneButton.snp.makeConstraints {
             $0.top.equalTo(descriptionLabel.snp.bottom).offset(20)
-            $0.leading.trailing.equalToSuperview().inset(25)
+            $0.leading.trailing.equalToSuperview().inset(37)
+        }
+
+        otherAccountLabel.snp.makeConstraints {
+            $0.top.equalTo(doneButton.snp.bottom).offset(20)
+            $0.centerX.equalToSuperview()
         }
     }
 
     private func applyUsername(to userName: String) {
         titleLabel.text = "\(userName)님 Instargram에 \n 오신 것을 환영합니다"
+    }
+
+    private func setGesture() {
+        let tapPressRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture(_:)))
+
+        self.otherAccountLabel.addGestureRecognizer(tapPressRecognizer)
+    }
+
+    @objc func handleTapGesture(_ sender: UITapGestureRecognizer) {
+        print("탭탭")
+        guard let presentingVC = self.presentingViewController as? UINavigationController else { return }
+
+        presentingVC.popToRootViewController(animated: true)
+        self.dismiss(animated: true)
     }
 }
