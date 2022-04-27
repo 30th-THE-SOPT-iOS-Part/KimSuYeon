@@ -10,7 +10,7 @@
 		4D1A326728190BC5009B9948 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 4D1A326628190BC5009B9948 /* RxCocoa */; };
 		4D1A326928190BC5009B9948 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 4D1A326828190BC5009B9948 /* RxRelay */; };
 		4D1A326B28190BC5009B9948 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4D1A326A28190BC5009B9948 /* RxSwift */; };
-		4D1A327528190F52009B9948 /* ViewModeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1A327428190F52009B9948 /* ViewModeType.swift */; };
+		4D1A327528190F52009B9948 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1A327428190F52009B9948 /* ViewModelType.swift */; };
 		4D1A327828190FC1009B9948 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1A327728190FC1009B9948 /* LoginViewModel.swift */; };
 		4D1A327A28190FDA009B9948 /* MakeNameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1A327928190FDA009B9948 /* MakeNameViewModel.swift */; };
 		4D1A327C28190FF4009B9948 /* MakePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1A327B28190FF4009B9948 /* MakePasswordViewModel.swift */; };
@@ -40,7 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4D1A327428190F52009B9948 /* ViewModeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModeType.swift; sourceTree = "<group>"; };
+		4D1A327428190F52009B9948 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		4D1A327728190FC1009B9948 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		4D1A327928190FDA009B9948 /* MakeNameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeNameViewModel.swift; sourceTree = "<group>"; };
 		4D1A327B28190FF4009B9948 /* MakePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePasswordViewModel.swift; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 		4D1A327328190F3B009B9948 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				4D1A327428190F52009B9948 /* ViewModeType.swift */,
+				4D1A327428190F52009B9948 /* ViewModelType.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -396,7 +396,7 @@
 				4D22C0CF27FB8D06005F3A73 /* CompleteLoginViewController.swift in Sources */,
 				4DD40B2E28137A8B006CABC1 /* FeedViewController.swift in Sources */,
 				4DD4DBBB27FA3A0600E54124 /* BaseViewController.swift in Sources */,
-				4D1A327528190F52009B9948 /* ViewModeType.swift in Sources */,
+				4D1A327528190F52009B9948 /* ViewModelType.swift in Sources */,
 				4DD4DBBD27FA3E6100E54124 /* InstaTextField.swift in Sources */,
 				4DD4DBB927FA39F800E54124 /* LoginViewController.swift in Sources */,
 				4D1A327E28191007009B9948 /* CompleteLoginViewModel.swift in Sources */,

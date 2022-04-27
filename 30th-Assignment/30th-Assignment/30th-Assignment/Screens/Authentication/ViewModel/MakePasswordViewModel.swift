@@ -7,13 +7,17 @@
 
 import Foundation
 
+import RxSwift
+
 class MakePasswordViewModel: ViewModelType {
+    
     struct Input {
     }
 
     struct Output {
     }
 
-    func transform(input: Input) -> Output {
+    func transform(input: Input, disposeBag: DisposeBag) -> Output {
+        <#code#>
     }
 }

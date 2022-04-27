@@ -7,6 +7,8 @@
 
 import Foundation
 
+import RxSwift
+
 class LoginViewModel: ViewModelType {
 
     struct Input {
@@ -15,7 +17,7 @@ class LoginViewModel: ViewModelType {
     struct Output {
     }
 
-    func transform(input: Input) -> Output {
-        
+    func transform(input: Input, disposeBag: DisposeBag) -> Output {
+        <#code#>
     }
 }
