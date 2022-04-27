@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D1A326728190BC5009B9948 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 4D1A326628190BC5009B9948 /* RxCocoa */; };
+		4D1A326928190BC5009B9948 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 4D1A326828190BC5009B9948 /* RxRelay */; };
+		4D1A326B28190BC5009B9948 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4D1A326A28190BC5009B9948 /* RxSwift */; };
+		4D1A327528190F52009B9948 /* ViewModeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1A327428190F52009B9948 /* ViewModeType.swift */; };
+		4D1A327828190FC1009B9948 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1A327728190FC1009B9948 /* LoginViewModel.swift */; };
+		4D1A327A28190FDA009B9948 /* MakeNameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1A327928190FDA009B9948 /* MakeNameViewModel.swift */; };
+		4D1A327C28190FF4009B9948 /* MakePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1A327B28190FF4009B9948 /* MakePasswordViewModel.swift */; };
+		4D1A327E28191007009B9948 /* CompleteLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1A327D28191007009B9948 /* CompleteLoginViewModel.swift */; };
 		4D22C0C927FB74FD005F3A73 /* InstaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C0C827FB74FD005F3A73 /* InstaButton.swift */; };
 		4D22C0CB27FB8A5E005F3A73 /* MakeNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C0CA27FB8A5E005F3A73 /* MakeNameViewController.swift */; };
 		4D22C0CD27FB8C6C005F3A73 /* MakePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C0CC27FB8C6C005F3A73 /* MakePasswordViewController.swift */; };
@@ -32,6 +40,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D1A327428190F52009B9948 /* ViewModeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModeType.swift; sourceTree = "<group>"; };
+		4D1A327728190FC1009B9948 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		4D1A327928190FDA009B9948 /* MakeNameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeNameViewModel.swift; sourceTree = "<group>"; };
+		4D1A327B28190FF4009B9948 /* MakePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePasswordViewModel.swift; sourceTree = "<group>"; };
+		4D1A327D28191007009B9948 /* CompleteLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteLoginViewModel.swift; sourceTree = "<group>"; };
 		4D22C0C827FB74FD005F3A73 /* InstaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaButton.swift; sourceTree = "<group>"; };
 		4D22C0CA27FB8A5E005F3A73 /* MakeNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeNameViewController.swift; sourceTree = "<group>"; };
 		4D22C0CC27FB8C6C005F3A73 /* MakePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePasswordViewController.swift; sourceTree = "<group>"; };
@@ -61,7 +74,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D1A326728190BC5009B9948 /* RxCocoa in Frameworks */,
 				4DD4DBB327FA1FDA00E54124 /* Then in Frameworks */,
+				4D1A326B28190BC5009B9948 /* RxSwift in Frameworks */,
+				4D1A326928190BC5009B9948 /* RxRelay in Frameworks */,
 				4DD4DBB627FA1FEE00E54124 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,6 +85,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D1A326F28190EF2009B9948 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4D1A327728190FC1009B9948 /* LoginViewModel.swift */,
+				4D1A327928190FDA009B9948 /* MakeNameViewModel.swift */,
+				4D1A327B28190FF4009B9948 /* MakePasswordViewModel.swift */,
+				4D1A327D28191007009B9948 /* CompleteLoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4D1A327028190F0E009B9948 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4DD4DBB827FA39F800E54124 /* LoginViewController.swift */,
+				4D22C0CA27FB8A5E005F3A73 /* MakeNameViewController.swift */,
+				4D22C0CC27FB8C6C005F3A73 /* MakePasswordViewController.swift */,
+				4D22C0CE27FB8D06005F3A73 /* CompleteLoginViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		4D1A327128190F1C009B9948 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4D1A327228190F21009B9948 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4D1A327328190F3B009B9948 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				4D1A327428190F52009B9948 /* ViewModeType.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		4DD40B24281379AB006CABC1 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +212,7 @@
 				4DD4DBAC27FA18DD00E54124 /* Resource */,
 				4DD4DBAA27FA188800E54124 /* Utils */,
 				4DD4DBAE27FA191600E54124 /* Supports */,
+				4D1A327328190F3B009B9948 /* Protocol */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -225,10 +286,10 @@
 		4DD4DBB727FA39A000E54124 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				4DD4DBB827FA39F800E54124 /* LoginViewController.swift */,
-				4D22C0CA27FB8A5E005F3A73 /* MakeNameViewController.swift */,
-				4D22C0CC27FB8C6C005F3A73 /* MakePasswordViewController.swift */,
-				4D22C0CE27FB8D06005F3A73 /* CompleteLoginViewController.swift */,
+				4D1A327228190F21009B9948 /* Model */,
+				4D1A327128190F1C009B9948 /* View */,
+				4D1A327028190F0E009B9948 /* ViewController */,
+				4D1A326F28190EF2009B9948 /* ViewModel */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -260,6 +321,9 @@
 			packageProductDependencies = (
 				4DD4DBB227FA1FDA00E54124 /* Then */,
 				4DD4DBB527FA1FEE00E54124 /* SnapKit */,
+				4D1A326628190BC5009B9948 /* RxCocoa */,
+				4D1A326828190BC5009B9948 /* RxRelay */,
+				4D1A326A28190BC5009B9948 /* RxSwift */,
 			);
 			productName = "30th-Assignment";
 			productReference = 4DD4DB9027FA171D00E54124 /* 30th-Assignment.app */;
@@ -292,6 +356,7 @@
 			packageReferences = (
 				4DD4DBB127FA1FDA00E54124 /* XCRemoteSwiftPackageReference "Then" */,
 				4DD4DBB427FA1FEE00E54124 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				4D1A326528190BC5009B9948 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 4DD4DB9127FA171D00E54124 /* Products */;
 			projectDirPath = "";
@@ -327,14 +392,19 @@
 				4D22C0CB27FB8A5E005F3A73 /* MakeNameViewController.swift in Sources */,
 				4DD40B3628137AC4006CABC1 /* ProfileViewController.swift in Sources */,
 				4DF86F5827FF72DB009DCFAA /* ImageLiteral.swift in Sources */,
+				4D1A327828190FC1009B9948 /* LoginViewModel.swift in Sources */,
 				4D22C0CF27FB8D06005F3A73 /* CompleteLoginViewController.swift in Sources */,
 				4DD40B2E28137A8B006CABC1 /* FeedViewController.swift in Sources */,
 				4DD4DBBB27FA3A0600E54124 /* BaseViewController.swift in Sources */,
+				4D1A327528190F52009B9948 /* ViewModeType.swift in Sources */,
 				4DD4DBBD27FA3E6100E54124 /* InstaTextField.swift in Sources */,
 				4DD4DBB927FA39F800E54124 /* LoginViewController.swift in Sources */,
+				4D1A327E28191007009B9948 /* CompleteLoginViewModel.swift in Sources */,
+				4D1A327A28190FDA009B9948 /* MakeNameViewModel.swift in Sources */,
 				4DD40B2328136965006CABC1 /* BackButton.swift in Sources */,
 				4D22C0CD27FB8C6C005F3A73 /* MakePasswordViewController.swift in Sources */,
 				4DD4DB9427FA171D00E54124 /* AppDelegate.swift in Sources */,
+				4D1A327C28190FF4009B9948 /* MakePasswordViewModel.swift in Sources */,
 				4DD40B3228137AAD006CABC1 /* ReelsViewController.swift in Sources */,
 				4DD4DB9627FA171D00E54124 /* SceneDelegate.swift in Sources */,
 			);
@@ -546,6 +616,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4D1A326528190BC5009B9948 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 		4DD4DBB127FA1FDA00E54124 /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then";
@@ -565,6 +643,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4D1A326628190BC5009B9948 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D1A326528190BC5009B9948 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		4D1A326828190BC5009B9948 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D1A326528190BC5009B9948 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		4D1A326A28190BC5009B9948 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D1A326528190BC5009B9948 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
 		4DD4DBB227FA1FDA00E54124 /* Then */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4DD4DBB127FA1FDA00E54124 /* XCRemoteSwiftPackageReference "Then" */;

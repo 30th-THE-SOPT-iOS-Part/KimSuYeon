@@ -12,6 +12,8 @@ import Then
 
 final class LoginViewController: BaseViewController {
 
+    let viewModel = LoginViewModel()
+
     private let logoImage = UIImageView().then {
         $0.image = ImageLiteral.imgInstagramLogo
         $0.contentMode = .scaleToFill

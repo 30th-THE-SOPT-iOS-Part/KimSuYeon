@@ -12,6 +12,8 @@ import Then
 
 final class MakeNameViewController: BaseViewController {
 
+    let viewModel = MakeNameViewModel()
+
     private let titleLabel = UILabel().then {
         $0.text = "사용자 이름 만들기"
         $0.font = .systemFont(ofSize: 24)
