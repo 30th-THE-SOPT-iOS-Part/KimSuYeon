@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "password shown eye icon.png",
+      "filename" : "icn_reels.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "password shown eye icon@2x.png",
+      "filename" : "icn_reels@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "password shown eye icon@3x.png",
+      "filename" : "icn_reels@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
