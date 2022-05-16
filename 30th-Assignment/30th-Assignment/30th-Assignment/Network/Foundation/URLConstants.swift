@@ -9,6 +9,6 @@ import Foundation
 
 struct URLConstants {
     
-    static let authSignup = "/auth/signup"
-    static let authSignin = "/auth/signin"
+    static let signUp = "/auth/signup"
+    static let signIn = "/auth/signin"
 }
