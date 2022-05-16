@@ -12,6 +12,8 @@
 		4D22C0CD27FB8C6C005F3A73 /* MakePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C0CC27FB8C6C005F3A73 /* MakePasswordViewController.swift */; };
 		4D22C0CF27FB8D06005F3A73 /* CompleteLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C0CE27FB8D06005F3A73 /* CompleteLoginViewController.swift */; };
 		4D32E26428328DD500A3DD31 /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32E26328328DD500A3DD31 /* APIEnvironment.swift */; };
+		4D32E26A28328E0E00A3DD31 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32E26928328E0E00A3DD31 /* NetworkConstants.swift */; };
+		4D32E2742832951900A3DD31 /* URLConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32E2732832951900A3DD31 /* URLConstants.swift */; };
 		4DD40B2328136965006CABC1 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD40B2228136965006CABC1 /* BackButton.swift */; };
 		4DD40B26281379D7006CABC1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD40B25281379D7006CABC1 /* TabBarController.swift */; };
 		4DD40B2E28137A8B006CABC1 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD40B2D28137A8B006CABC1 /* FeedViewController.swift */; };
@@ -38,6 +40,8 @@
 		4D22C0CC27FB8C6C005F3A73 /* MakePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePasswordViewController.swift; sourceTree = "<group>"; };
 		4D22C0CE27FB8D06005F3A73 /* CompleteLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteLoginViewController.swift; sourceTree = "<group>"; };
 		4D32E26328328DD500A3DD31 /* APIEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnvironment.swift; sourceTree = "<group>"; };
+		4D32E26928328E0E00A3DD31 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		4D32E2732832951900A3DD31 /* URLConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstants.swift; sourceTree = "<group>"; };
 		4DD40B2228136965006CABC1 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		4DD40B25281379D7006CABC1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		4DD40B2D28137A8B006CABC1 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -323,6 +327,7 @@
 			files = (
 				4DD40B3028137A9A006CABC1 /* SearchViewController.swift in Sources */,
 				4DD4DBBF27FA43AC00E54124 /* UIView+.swift in Sources */,
+				4D32E26A28328E0E00A3DD31 /* NetworkConstants.swift in Sources */,
 				4DD40B26281379D7006CABC1 /* TabBarController.swift in Sources */,
 				4D22C0C927FB74FD005F3A73 /* InstaButton.swift in Sources */,
 				4D32E26428328DD500A3DD31 /* APIEnvironment.swift in Sources */,
@@ -338,6 +343,7 @@
 				4DD40B2328136965006CABC1 /* BackButton.swift in Sources */,
 				4D22C0CD27FB8C6C005F3A73 /* MakePasswordViewController.swift in Sources */,
 				4DD4DB9427FA171D00E54124 /* AppDelegate.swift in Sources */,
+				4D32E2742832951900A3DD31 /* URLConstants.swift in Sources */,
 				4DD40B3228137AAD006CABC1 /* ReelsViewController.swift in Sources */,
 				4DD4DB9627FA171D00E54124 /* SceneDelegate.swift in Sources */,
 			);
