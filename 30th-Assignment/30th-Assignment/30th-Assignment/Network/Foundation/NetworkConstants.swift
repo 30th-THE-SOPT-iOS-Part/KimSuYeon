@@ -7,7 +7,18 @@
 
 import Foundation
 
-struct NetworkConstants {
+enum HeaderType {
+    case basic
+    case auth
+}
 
-    static let header = ["Content-Type": "application/json"]
+enum HTTPHeaderField: String {
+    case authentication = "Authorization"
+    case contentType = "Content-Type"
+    case accesstoken = "accesstoken"
+}
+
+enum ContentType: String {
+    case json = "Application/json"
+    case tokenSerial = ""
 }
