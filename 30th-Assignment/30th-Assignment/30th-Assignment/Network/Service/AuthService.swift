@@ -28,7 +28,6 @@ struct AuthService {
                 print(err.localizedDescription)
             }
         }
-
     }
     /// [POST] 회원가입
     func requestSignUp(email: String, name: String, pw: String, completion: @escaping (NetworkResult<Any>) -> (Void)) {

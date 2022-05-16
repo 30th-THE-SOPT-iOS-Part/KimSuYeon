@@ -39,11 +39,13 @@ final class LoginViewController: BaseViewController {
         $0.isEnabled = false
 
         let completeViewAction = UIAction { _ in
-            let completeVC = CompleteLoginViewController()
 
-            completeVC.modalPresentationStyle = .fullScreen
-            completeVC.userName = self.emailTextField.text
-            self.present(completeVC, animated: true)
+            self.postSignIn(email: self.emailTextField.text ?? "", pw: self.passwordTextField.text ?? "")
+//            let completeVC = CompleteLoginViewController()
+//
+//            completeVC.modalPresentationStyle = .fullScreen
+//            completeVC.userName = self.emailTextField.text
+//            self.present(completeVC, animated: true)
         }
         $0.addAction(completeViewAction, for: .touchUpInside)
     }
@@ -142,6 +144,25 @@ final class LoginViewController: BaseViewController {
     private func textFieldDidChange(_ sender: InstaTextField) {
         /// 도전과제 (2)
         loginButton.isEnabled = [emailTextField, passwordTextField].allSatisfy { $0.hasText }
+    }
+
+    private func postSignIn(email: String, pw: String) {
+        AuthService.shared.requestSignIn(email: email, pw: pw) { result in
+            switch result {
+            case .success(let response):
+                if let message = response as? String {
+                    self.makePresentAlert(title: message, nextVC: TabBarController())
+                }
+            case .requestErr:
+                self.makeAlert(title: "아이디 또는 비밀번호를 확인해주세요.")
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
     }
 }
 
