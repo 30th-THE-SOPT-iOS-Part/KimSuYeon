@@ -21,6 +21,7 @@
 		4D32E27228328FC300A3DD31 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32E27128328FC300A3DD31 /* AuthService.swift */; };
 		4D32E2742832951900A3DD31 /* URLConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32E2732832951900A3DD31 /* URLConstants.swift */; };
 		4D32E2762832961400A3DD31 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32E2752832961300A3DD31 /* Auth.swift */; };
+		4D32E27C28329E0C00A3DD31 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4D32E27B28329E0C00A3DD31 /* Alamofire */; };
 		4DD40B2328136965006CABC1 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD40B2228136965006CABC1 /* BackButton.swift */; };
 		4DD40B26281379D7006CABC1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD40B25281379D7006CABC1 /* TabBarController.swift */; };
 		4DD40B2E28137A8B006CABC1 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD40B2D28137A8B006CABC1 /* FeedViewController.swift */; };
@@ -81,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D32E27C28329E0C00A3DD31 /* Alamofire in Frameworks */,
 				4DD4DBB327FA1FDA00E54124 /* Then in Frameworks */,
 				4DD4DBB627FA1FEE00E54124 /* SnapKit in Frameworks */,
 			);
@@ -330,6 +332,7 @@
 			packageProductDependencies = (
 				4DD4DBB227FA1FDA00E54124 /* Then */,
 				4DD4DBB527FA1FEE00E54124 /* SnapKit */,
+				4D32E27B28329E0C00A3DD31 /* Alamofire */,
 			);
 			productName = "30th-Assignment";
 			productReference = 4DD4DB9027FA171D00E54124 /* 30th-Assignment.app */;
@@ -362,6 +365,7 @@
 			packageReferences = (
 				4DD4DBB127FA1FDA00E54124 /* XCRemoteSwiftPackageReference "Then" */,
 				4DD4DBB427FA1FEE00E54124 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				4D32E27A28329E0C00A3DD31 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 4DD4DB9127FA171D00E54124 /* Products */;
 			projectDirPath = "";
@@ -626,6 +630,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4D32E27A28329E0C00A3DD31 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		4DD4DBB127FA1FDA00E54124 /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then";
@@ -645,6 +657,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4D32E27B28329E0C00A3DD31 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D32E27A28329E0C00A3DD31 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		4DD4DBB227FA1FDA00E54124 /* Then */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4DD4DBB127FA1FDA00E54124 /* XCRemoteSwiftPackageReference "Then" */;
