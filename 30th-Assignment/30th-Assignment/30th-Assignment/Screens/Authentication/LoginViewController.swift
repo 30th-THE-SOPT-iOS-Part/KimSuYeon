@@ -38,15 +38,15 @@ final class LoginViewController: BaseViewController {
     private lazy var loginButton = InstaButton(title: "로그인").then {
         $0.isEnabled = false
 
-        let completeViewAction = UIAction { _ in
-            self.postSignIn(email: self.emailTextField.text ?? "", pw: self.passwordTextField.text ?? "")
+        let LoginAction = UIAction { _ in
+            self.postSignIn()
 //            let completeVC = CompleteLoginViewController()
 //
 //            completeVC.modalPresentationStyle = .fullScreen
 //            completeVC.userName = self.emailTextField.text
 //            self.present(completeVC, animated: true)
         }
-        $0.addAction(completeViewAction, for: .touchUpInside)
+        $0.addAction(LoginAction, for: .touchUpInside)
     }
 
     private let signUpLabel = UILabel().then {
@@ -145,13 +145,15 @@ final class LoginViewController: BaseViewController {
         loginButton.isEnabled = [emailTextField, passwordTextField].allSatisfy { $0.hasText }
     }
 
-    private func postSignIn(email: String, pw: String) {
-        AuthService.shared.requestSignIn(email: email, pw: pw) { result in
+    private func postSignIn() {
+        guard let email = emailTextField.text,
+              let password = passwordTextField.text
+        else { return }
+
+        AuthService.shared.requestSignIn(email: email, pw: password) { result in
             switch result {
-            case .success(let response):
-                if let message = response as? String {
-                    self.makePresentAlert(title: message, nextVC: TabBarController())
-                }
+            case .success:
+                    self.makePresentAlert(title: "로그인 성공", nextVC: TabBarController())
             case .requestErr:
                 self.makeAlert(title: "아이디 또는 비밀번호를 확인해주세요.")
             case .pathErr:
