@@ -22,6 +22,7 @@
 		4D32E2742832951900A3DD31 /* URLConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32E2732832951900A3DD31 /* URLConstants.swift */; };
 		4D32E2762832961400A3DD31 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32E2752832961300A3DD31 /* Auth.swift */; };
 		4D32E27C28329E0C00A3DD31 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4D32E27B28329E0C00A3DD31 /* Alamofire */; };
+		4D32E27E2832B25500A3DD31 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32E27D2832B25500A3DD31 /* UIViewController+.swift */; };
 		4DD40B2328136965006CABC1 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD40B2228136965006CABC1 /* BackButton.swift */; };
 		4DD40B26281379D7006CABC1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD40B25281379D7006CABC1 /* TabBarController.swift */; };
 		4DD40B2E28137A8B006CABC1 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD40B2D28137A8B006CABC1 /* FeedViewController.swift */; };
@@ -57,6 +58,7 @@
 		4D32E27128328FC300A3DD31 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		4D32E2732832951900A3DD31 /* URLConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstants.swift; sourceTree = "<group>"; };
 		4D32E2752832961300A3DD31 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		4D32E27D2832B25500A3DD31 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		4DD40B2228136965006CABC1 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		4DD40B25281379D7006CABC1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		4DD40B2D28137A8B006CABC1 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				4DD4DBBE27FA43AC00E54124 /* UIView+.swift */,
+				4D32E27D2832B25500A3DD31 /* UIViewController+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				4DD40B2328136965006CABC1 /* BackButton.swift in Sources */,
 				4D22C0CD27FB8C6C005F3A73 /* MakePasswordViewController.swift in Sources */,
 				4DD4DB9427FA171D00E54124 /* AppDelegate.swift in Sources */,
+				4D32E27E2832B25500A3DD31 /* UIViewController+.swift in Sources */,
 				4D32E27028328FB400A3DD31 /* AuthRouter.swift in Sources */,
 				4D32E2742832951900A3DD31 /* URLConstants.swift in Sources */,
 				4DD40B3228137AAD006CABC1 /* ReelsViewController.swift in Sources */,
