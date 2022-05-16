@@ -43,4 +43,17 @@ extension UIViewController {
         self.present(alertViewController, animated: true, completion: completion)
     }
 
+    /// 확인 버튼 누르면 화면전환되는 Alert 메서드
+    func makePresentAlert(title : String, message : String? = nil,
+                          okTitle: String = "확인", nextVC: UIViewController) {
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
+        let alertViewController = UIAlertController(title: title, message: message,
+                                                    preferredStyle: .alert)
+        alertViewController.addAction(UIAlertAction(title: okTitle, style: .default) { action in
+            nextVC.modalPresentationStyle = .fullScreen
+            self.present(nextVC, animated: true)
+        })
+        self.present(alertViewController, animated: true, completion: nil)
+    }
 }
