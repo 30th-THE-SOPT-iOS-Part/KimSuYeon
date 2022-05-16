@@ -14,6 +14,7 @@
 		4D32E26428328DD500A3DD31 /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32E26328328DD500A3DD31 /* APIEnvironment.swift */; };
 		4D32E26628328DE300A3DD31 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32E26528328DE300A3DD31 /* NetworkResult.swift */; };
 		4D32E26A28328E0E00A3DD31 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32E26928328E0E00A3DD31 /* NetworkConstants.swift */; };
+		4D32E26C28328E1F00A3DD31 /* GeneralService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32E26B28328E1F00A3DD31 /* GeneralService.swift */; };
 		4D32E26E28328F2900A3DD31 /* GenaralResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32E26D28328F2900A3DD31 /* GenaralResponse.swift */; };
 		4D32E2742832951900A3DD31 /* URLConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32E2732832951900A3DD31 /* URLConstants.swift */; };
 		4DD40B2328136965006CABC1 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD40B2228136965006CABC1 /* BackButton.swift */; };
@@ -44,6 +45,7 @@
 		4D32E26328328DD500A3DD31 /* APIEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnvironment.swift; sourceTree = "<group>"; };
 		4D32E26528328DE300A3DD31 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		4D32E26928328E0E00A3DD31 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		4D32E26B28328E1F00A3DD31 /* GeneralService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralService.swift; sourceTree = "<group>"; };
 		4D32E26D28328F2900A3DD31 /* GenaralResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenaralResponse.swift; sourceTree = "<group>"; };
 		4D32E2732832951900A3DD31 /* URLConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstants.swift; sourceTree = "<group>"; };
 		4DD40B2228136965006CABC1 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				4DD40B3428137ABA006CABC1 /* ShopViewController.swift in Sources */,
 				4D22C0CB27FB8A5E005F3A73 /* MakeNameViewController.swift in Sources */,
 				4DD40B3628137AC4006CABC1 /* ProfileViewController.swift in Sources */,
+				4D32E26C28328E1F00A3DD31 /* GeneralService.swift in Sources */,
 				4DF86F5827FF72DB009DCFAA /* ImageLiteral.swift in Sources */,
 				4D22C0CF27FB8D06005F3A73 /* CompleteLoginViewController.swift in Sources */,
 				4DD40B2E28137A8B006CABC1 /* FeedViewController.swift in Sources */,
