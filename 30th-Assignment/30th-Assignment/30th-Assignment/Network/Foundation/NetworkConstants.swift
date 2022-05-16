@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 enum HeaderType {
     case basic

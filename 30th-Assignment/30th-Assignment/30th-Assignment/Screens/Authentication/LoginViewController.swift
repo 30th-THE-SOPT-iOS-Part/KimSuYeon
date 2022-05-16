@@ -39,7 +39,6 @@ final class LoginViewController: BaseViewController {
         $0.isEnabled = false
 
         let completeViewAction = UIAction { _ in
-
             self.postSignIn(email: self.emailTextField.text ?? "", pw: self.passwordTextField.text ?? "")
 //            let completeVC = CompleteLoginViewController()
 //

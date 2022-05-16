@@ -16,7 +16,7 @@ extension APIEnvironment {
     var baseUrl: String {
         switch self {
         case .development:
-            return "http://13.124.62.236/"
+            return "http://13.124.62.236"
         case .production:
             return ""
         }
