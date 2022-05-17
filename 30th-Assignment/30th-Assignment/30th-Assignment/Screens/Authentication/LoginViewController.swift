@@ -40,11 +40,6 @@ final class LoginViewController: BaseViewController {
 
         let LoginAction = UIAction { _ in
             self.postSignIn()
-//            let completeVC = CompleteLoginViewController()
-//
-//            completeVC.modalPresentationStyle = .fullScreen
-//            completeVC.userName = self.emailTextField.text
-//            self.present(completeVC, animated: true)
         }
         $0.addAction(LoginAction, for: .touchUpInside)
     }
@@ -154,8 +149,18 @@ final class LoginViewController: BaseViewController {
             switch result {
             case .success:
                     self.makePresentAlert(title: "로그인 성공", nextVC: TabBarController())
-            case .requestErr:
-                self.makeAlert(title: "아이디 또는 비밀번호를 확인해주세요.")
+            case .requestErr(let status):
+                guard let status = status as? Int else { return }
+
+                switch status {
+                case 404:
+                    self.makeAlert(title: "이메일에 해당하는 사용자정보가 없습니다.")
+                case 409:
+                    self.makeAlert(title: "비밀번호가 올바르지 않습니다.")
+                default:
+                    self.makeAlert(title: "아이디와 비밀번호를 다시 확인해주세요.")
+                }
+
             case .pathErr:
                 print("pathErr")
             case .serverErr:
