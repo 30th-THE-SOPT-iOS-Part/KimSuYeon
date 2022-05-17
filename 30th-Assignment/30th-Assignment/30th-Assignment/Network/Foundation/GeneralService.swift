@@ -7,9 +7,22 @@
 
 import Foundation
 
-struct GeneralService {
+import Alamofire
 
-    static func judgeStatus<T: Codable>(by statusCode: Int, _ data: Data, _ type: T.Type) -> NetworkResult<Any> {
+class GeneralService {
+
+    let AFmanager: Session = {
+        var requestTimeOut: Float = 30
+
+        var session = AF
+        let configuration = URLSessionConfiguration.af.default
+        configuration.timeoutIntervalForRequest = TimeInterval(requestTimeOut)
+
+        session = Session(configuration: configuration)
+        return session
+    }()
+
+    func judgeStatus<T: Codable>(by statusCode: Int, _ data: Data, _ type: T.Type) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
         guard let decodedData = try? decoder.decode(GeneralResponse<T>.self, from: data)
         else { return .pathErr }
