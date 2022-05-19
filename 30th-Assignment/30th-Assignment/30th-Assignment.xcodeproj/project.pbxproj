@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D153CA32835DA150072B731 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D153CA22835DA150072B731 /* AppCoordinator.swift */; };
+		4D153CA52835DA290072B731 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D153CA42835DA290072B731 /* LoginCoordinator.swift */; };
+		4D153CA72835DA570072B731 /* FeedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D153CA62835DA570072B731 /* FeedCoordinator.swift */; };
+		4D153CA92835DDB80072B731 /* SignUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D153CA82835DDB80072B731 /* SignUpCoordinator.swift */; };
+		4D153CAD2835DE570072B731 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D153CAC2835DE570072B731 /* Coordinator.swift */; };
+		4D153CAF2835DE750072B731 /* TransitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D153CAE2835DE750072B731 /* TransitionModel.swift */; };
 		4D22C0C927FB74FD005F3A73 /* InstaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C0C827FB74FD005F3A73 /* InstaButton.swift */; };
 		4D22C0CB27FB8A5E005F3A73 /* MakeNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C0CA27FB8A5E005F3A73 /* MakeNameViewController.swift */; };
 		4D22C0CD27FB8C6C005F3A73 /* MakePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C0CC27FB8C6C005F3A73 /* MakePasswordViewController.swift */; };
@@ -44,6 +50,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D153CA22835DA150072B731 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		4D153CA42835DA290072B731 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		4D153CA62835DA570072B731 /* FeedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCoordinator.swift; sourceTree = "<group>"; };
+		4D153CA82835DDB80072B731 /* SignUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCoordinator.swift; sourceTree = "<group>"; };
+		4D153CAC2835DE570072B731 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		4D153CAE2835DE750072B731 /* TransitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionModel.swift; sourceTree = "<group>"; };
 		4D22C0C827FB74FD005F3A73 /* InstaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaButton.swift; sourceTree = "<group>"; };
 		4D22C0CA27FB8A5E005F3A73 /* MakeNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeNameViewController.swift; sourceTree = "<group>"; };
 		4D22C0CC27FB8C6C005F3A73 /* MakePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePasswordViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +112,43 @@
 				4D32E2732832951900A3DD31 /* URLConstants.swift */,
 			);
 			path = APIConstants;
+			sourceTree = "<group>";
+		};
+		4D153CA02835D9870072B731 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				4D153CA22835DA150072B731 /* AppCoordinator.swift */,
+				4D153CA12835DA000072B731 /* Foundation */,
+				4D153CAA2835DDBF0072B731 /* AuthCoordinators */,
+				4D153CAB2835DDEA0072B731 /* TabBarCoordinators */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		4D153CA12835DA000072B731 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				4D153CAC2835DE570072B731 /* Coordinator.swift */,
+				4D153CAE2835DE750072B731 /* TransitionModel.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		4D153CAA2835DDBF0072B731 /* AuthCoordinators */ = {
+			isa = PBXGroup;
+			children = (
+				4D153CA42835DA290072B731 /* LoginCoordinator.swift */,
+				4D153CA82835DDB80072B731 /* SignUpCoordinator.swift */,
+			);
+			path = AuthCoordinators;
+			sourceTree = "<group>";
+		};
+		4D153CAB2835DDEA0072B731 /* TabBarCoordinators */ = {
+			isa = PBXGroup;
+			children = (
+				4D153CA62835DA570072B731 /* FeedCoordinator.swift */,
+			);
+			path = TabBarCoordinators;
 			sourceTree = "<group>";
 		};
 		4D32E25E28328D1A00A3DD31 /* Network */ = {
@@ -241,6 +290,7 @@
 		4DD4DBA827FA17F200E54124 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				4D153CA02835D9870072B731 /* Coordinator */,
 				4DD40B24281379AB006CABC1 /* Tabbar */,
 				4DD40B2C28137A6D006CABC1 /* Feed */,
 				4DD40B2B28137A65006CABC1 /* Search */,
@@ -407,17 +457,22 @@
 				4DD40B3028137A9A006CABC1 /* SearchViewController.swift in Sources */,
 				4D32E26E28328F2900A3DD31 /* GenaralResponse.swift in Sources */,
 				4DD4DBBF27FA43AC00E54124 /* UIView+.swift in Sources */,
+				4D153CAF2835DE750072B731 /* TransitionModel.swift in Sources */,
 				4D32E26A28328E0E00A3DD31 /* NetworkConstants.swift in Sources */,
 				4DD40B26281379D7006CABC1 /* TabBarController.swift in Sources */,
 				4D22C0C927FB74FD005F3A73 /* InstaButton.swift in Sources */,
 				4D32E26428328DD500A3DD31 /* APIEnvironment.swift in Sources */,
 				4DD40B3428137ABA006CABC1 /* ShopViewController.swift in Sources */,
+				4D153CA72835DA570072B731 /* FeedCoordinator.swift in Sources */,
 				4D22C0CB27FB8A5E005F3A73 /* MakeNameViewController.swift in Sources */,
+				4D153CAD2835DE570072B731 /* Coordinator.swift in Sources */,
 				4DD40B3628137AC4006CABC1 /* ProfileViewController.swift in Sources */,
 				4D32E26828328DF900A3DD31 /* BaseRouter.swift in Sources */,
 				4D32E2762832961400A3DD31 /* Auth.swift in Sources */,
+				4D153CA32835DA150072B731 /* AppCoordinator.swift in Sources */,
 				4D32E26C28328E1F00A3DD31 /* BaseService.swift in Sources */,
 				4DF86F5827FF72DB009DCFAA /* ImageLiteral.swift in Sources */,
+				4D153CA52835DA290072B731 /* LoginCoordinator.swift in Sources */,
 				4D22C0CF27FB8D06005F3A73 /* CompleteLoginViewController.swift in Sources */,
 				4DD40B2E28137A8B006CABC1 /* FeedViewController.swift in Sources */,
 				4D32E26628328DE300A3DD31 /* NetworkResult.swift in Sources */,
@@ -430,6 +485,7 @@
 				4DD4DB9427FA171D00E54124 /* AppDelegate.swift in Sources */,
 				4D32E27E2832B25500A3DD31 /* UIViewController+.swift in Sources */,
 				4D32E27028328FB400A3DD31 /* AuthRouter.swift in Sources */,
+				4D153CA92835DDB80072B731 /* SignUpCoordinator.swift in Sources */,
 				4D32E2742832951900A3DD31 /* URLConstants.swift in Sources */,
 				4DD40B3228137AAD006CABC1 /* ReelsViewController.swift in Sources */,
 				4DD4DB9627FA171D00E54124 /* SceneDelegate.swift in Sources */,
