@@ -9,14 +9,18 @@ import Foundation
 
 import Alamofire
 
-class GeneralService {
+class BaseService {
+
+    enum TimeOut {
+        static let requestTimeOut: Float = 30
+        static let resourceTimeOut: Float = 30
+    }
 
     let AFmanager: Session = {
-        var requestTimeOut: Float = 30
-
         var session = AF
         let configuration = URLSessionConfiguration.af.default
-        configuration.timeoutIntervalForRequest = TimeInterval(requestTimeOut)
+        configuration.timeoutIntervalForRequest = TimeInterval(TimeOut.requestTimeOut)
+        configuration.timeoutIntervalForResource = TimeInterval(TimeOut.resourceTimeOut)
 
         session = Session(configuration: configuration)
         return session

@@ -13,9 +13,9 @@
 		4D22C0CF27FB8D06005F3A73 /* CompleteLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C0CE27FB8D06005F3A73 /* CompleteLoginViewController.swift */; };
 		4D32E26428328DD500A3DD31 /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32E26328328DD500A3DD31 /* APIEnvironment.swift */; };
 		4D32E26628328DE300A3DD31 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32E26528328DE300A3DD31 /* NetworkResult.swift */; };
-		4D32E26828328DF900A3DD31 /* NeworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32E26728328DF900A3DD31 /* NeworkRequest.swift */; };
+		4D32E26828328DF900A3DD31 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32E26728328DF900A3DD31 /* BaseRouter.swift */; };
 		4D32E26A28328E0E00A3DD31 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32E26928328E0E00A3DD31 /* NetworkConstants.swift */; };
-		4D32E26C28328E1F00A3DD31 /* GeneralService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32E26B28328E1F00A3DD31 /* GeneralService.swift */; };
+		4D32E26C28328E1F00A3DD31 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32E26B28328E1F00A3DD31 /* BaseService.swift */; };
 		4D32E26E28328F2900A3DD31 /* GenaralResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32E26D28328F2900A3DD31 /* GenaralResponse.swift */; };
 		4D32E27028328FB400A3DD31 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32E26F28328FB400A3DD31 /* AuthRouter.swift */; };
 		4D32E27228328FC300A3DD31 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32E27128328FC300A3DD31 /* AuthService.swift */; };
@@ -50,9 +50,9 @@
 		4D22C0CE27FB8D06005F3A73 /* CompleteLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteLoginViewController.swift; sourceTree = "<group>"; };
 		4D32E26328328DD500A3DD31 /* APIEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnvironment.swift; sourceTree = "<group>"; };
 		4D32E26528328DE300A3DD31 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
-		4D32E26728328DF900A3DD31 /* NeworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeworkRequest.swift; sourceTree = "<group>"; };
+		4D32E26728328DF900A3DD31 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 		4D32E26928328E0E00A3DD31 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
-		4D32E26B28328E1F00A3DD31 /* GeneralService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralService.swift; sourceTree = "<group>"; };
+		4D32E26B28328E1F00A3DD31 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		4D32E26D28328F2900A3DD31 /* GenaralResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenaralResponse.swift; sourceTree = "<group>"; };
 		4D32E26F28328FB400A3DD31 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		4D32E27128328FC300A3DD31 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -93,6 +93,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D153C9F2835C1F10072B731 /* APIConstants */ = {
+			isa = PBXGroup;
+			children = (
+				4D32E26928328E0E00A3DD31 /* NetworkConstants.swift */,
+				4D32E2732832951900A3DD31 /* URLConstants.swift */,
+			);
+			path = APIConstants;
+			sourceTree = "<group>";
+		};
 		4D32E25E28328D1A00A3DD31 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,12 +116,11 @@
 		4D32E25F28328D5900A3DD31 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				4D153C9F2835C1F10072B731 /* APIConstants */,
 				4D32E26328328DD500A3DD31 /* APIEnvironment.swift */,
 				4D32E26528328DE300A3DD31 /* NetworkResult.swift */,
-				4D32E26728328DF900A3DD31 /* NeworkRequest.swift */,
-				4D32E26928328E0E00A3DD31 /* NetworkConstants.swift */,
-				4D32E26B28328E1F00A3DD31 /* GeneralService.swift */,
-				4D32E2732832951900A3DD31 /* URLConstants.swift */,
+				4D32E26728328DF900A3DD31 /* BaseRouter.swift */,
+				4D32E26B28328E1F00A3DD31 /* BaseService.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -406,9 +414,9 @@
 				4DD40B3428137ABA006CABC1 /* ShopViewController.swift in Sources */,
 				4D22C0CB27FB8A5E005F3A73 /* MakeNameViewController.swift in Sources */,
 				4DD40B3628137AC4006CABC1 /* ProfileViewController.swift in Sources */,
-				4D32E26828328DF900A3DD31 /* NeworkRequest.swift in Sources */,
+				4D32E26828328DF900A3DD31 /* BaseRouter.swift in Sources */,
 				4D32E2762832961400A3DD31 /* Auth.swift in Sources */,
-				4D32E26C28328E1F00A3DD31 /* GeneralService.swift in Sources */,
+				4D32E26C28328E1F00A3DD31 /* BaseService.swift in Sources */,
 				4DF86F5827FF72DB009DCFAA /* ImageLiteral.swift in Sources */,
 				4D22C0CF27FB8D06005F3A73 /* CompleteLoginViewController.swift in Sources */,
 				4DD40B2E28137A8B006CABC1 /* FeedViewController.swift in Sources */,

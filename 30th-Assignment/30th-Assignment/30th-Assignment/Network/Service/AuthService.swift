@@ -8,7 +8,13 @@
 import Foundation
 import Alamofire
 
-class AuthService: GeneralService {
+/*
+ AuthService : 실제 서버통신을 하기 위해 Service 함수를 구현하는 클래스
+ 싱글턴으로 접근한다. 앞서 만든 request 함수를 호출하고 Router를 통해 서버통신 수행
+ 네트워크 결과를 받아와서 
+ */
+
+class AuthService: BaseService {
     static let shared = AuthService()
 
     private override init() { }
