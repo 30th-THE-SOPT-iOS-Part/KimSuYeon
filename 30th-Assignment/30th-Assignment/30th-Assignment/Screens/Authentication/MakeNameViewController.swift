@@ -12,6 +12,8 @@ import Then
 
 final class MakeNameViewController: BaseViewController {
 
+    private var coordinator: MakeNameCoordinator
+
     private let titleLabel = UILabel().then {
         $0.text = "사용자 이름 만들기"
         $0.font = .systemFont(ofSize: 24)
@@ -36,12 +38,18 @@ final class MakeNameViewController: BaseViewController {
         $0.isEnabled = false
 
         let pushMakePasswordViewAction = UIAction { _ in
-            let makePasswordVC = MakePasswordViewController()
-            
-            makePasswordVC.userName = self.userNameTextField.text ?? ""
-            self.navigationController?.pushViewController(makePasswordVC, animated: true)
+            self.coordinator.transitionToMakePassword(userName: self.userNameTextField.text ?? "")
         }
         $0.addAction(pushMakePasswordViewAction, for: .touchUpInside)
+    }
+
+    init(coordinator: MakeNameCoordinator) {
+        self.coordinator = coordinator
+        super.init()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func viewDidLoad() {
@@ -50,6 +58,11 @@ final class MakeNameViewController: BaseViewController {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        coordinator.didFinishChildCoordinator()
     }
 
     override func configUI() {
