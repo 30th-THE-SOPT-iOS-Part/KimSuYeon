@@ -8,7 +8,12 @@
 import Foundation
 import Alamofire
 
-protocol Router: URLRequestConvertible {
+/*
+ BaseRouter : URLRequestConvertible을 채택한 프로토콜, 실제 각 Endpont에 해당하는 Router들이
+ BaseRouter를 채택하여 request 과정을 모듈화.
+ */
+
+protocol BaseRouter: URLRequestConvertible {
     var baseURL: String { get }
     var method: HTTPMethod { get }
     var path: String { get }
@@ -16,7 +21,7 @@ protocol Router: URLRequestConvertible {
     var header: HeaderType { get }
 }
 
-extension Router {
+extension BaseRouter {
     var baseURL: String {
         return APIEnvironment.development.baseUrl
     }
@@ -28,7 +33,7 @@ extension Router {
 
         urlRequest = self.makeHeaderForRequest(to: urlRequest)
 
-        return try self.makePrameterForRequest(to: urlRequest, with: url)
+        return try self.makeParameterForRequest(to: urlRequest, with: url)
     }
 
     private func makeHeaderForRequest(to request: URLRequest) -> URLRequest {
@@ -41,12 +46,19 @@ extension Router {
         case .auth:
             request.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
             request.setValue(ContentType.tokenSerial.rawValue, forHTTPHeaderField: HTTPHeaderField.accesstoken.rawValue)
+
+        case .multiPart:
+            request.setValue(ContentType.multiPart.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
+
+        case .multiPartWithAuth:
+            request.setValue(ContentType.multiPart.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
+            request.setValue(ContentType.tokenSerial.rawValue, forHTTPHeaderField: HTTPHeaderField.accesstoken.rawValue)
         }
 
         return request
     }
 
-    private func makePrameterForRequest(to request: URLRequest, with url: URL) throws -> URLRequest {
+    private func makeParameterForRequest(to request: URLRequest, with url: URL) throws -> URLRequest {
         var request = request
 
         switch parameters {

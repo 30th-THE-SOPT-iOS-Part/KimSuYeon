@@ -27,12 +27,12 @@ final class TabBarController: UITabBarController {
     }
 
     private func makeTabBarItems() {
-        let feedVC = FeedViewController()
-        feedVC.tabBarItem = UITabBarItem(
-            title: "",
-            image: ImageLiteral.iconHome,
-            selectedImage: ImageLiteral.iconHomeSelected
-        )
+//        let feedVC = FeedViewController(coordinator: FeedCoordinator)
+//        feedVC.tabBarItem = UITabBarItem(
+//            title: "",
+//            image: ImageLiteral.iconHome,
+//            selectedImage: ImageLiteral.iconHomeSelected
+//        )
 
         let searchVC = SearchViewController()
         searchVC.tabBarItem = UITabBarItem(
@@ -64,7 +64,7 @@ final class TabBarController: UITabBarController {
         )
 
         let tabBarViewControllers: [UIViewController] = {
-            let tabBarViewControllers = [feedVC,
+            let tabBarViewControllers = [
                                          searchVC,
                                          reelsVC,
                                          shopVC,

@@ -8,12 +8,17 @@
 import Foundation
 import Alamofire
 
+/*
+ AuthRouter : 여러 Endpoint들을 갖고 있는 enum
+ BaseRouter를 채택해서 path, method, header, parameter를 각 라우터에 맞게 request를 만든다.
+ */
+
 enum AuthRouter {
     case signIn(email: String, pw: String)
     case signUp(email: String, name: String, pw: String)
 }
 
-extension AuthRouter: Router {
+extension AuthRouter: BaseRouter {
 
     var path: String {
         switch self {

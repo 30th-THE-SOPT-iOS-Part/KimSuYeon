@@ -12,6 +12,8 @@ import Then
 
 final class CompleteLoginViewController: BaseViewController {
 
+    private var coordinator: CompleteLoginCoordinator
+
     var userName: String? {
         didSet {
             if let userName = userName {
@@ -51,8 +53,22 @@ final class CompleteLoginViewController: BaseViewController {
         $0.font = .systemFont(ofSize: 14, weight: .regular)
     }
 
+    init(coordinator: CompleteLoginCoordinator) {
+        self.coordinator = coordinator
+        super.init()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        coordinator.didFinishChildCoordinator()
     }
 
     override func configUI() {
@@ -112,10 +128,9 @@ final class CompleteLoginViewController: BaseViewController {
             switch result {
             case .success:
                 self.makeAlert(title: "회원가입 성공") { UIAlertAction in
-                    guard let presentingVC = self.presentingViewController as? UINavigationController else { return }
-
-                    presentingVC.popToRootViewController(animated: true)
-                    self.dismiss(animated: true)
+                    self.dismiss(animated: true) {
+                        self.coordinator.transitionToLogin()
+                    }
                 }
             case .requestErr(let status):
                 guard let status = status as? Int else { return }
