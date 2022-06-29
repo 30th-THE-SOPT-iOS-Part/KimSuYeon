@@ -43,6 +43,7 @@ final class MakePasswordViewController: BaseViewController {
 
             completeVC.modalPresentationStyle = .fullScreen
             completeVC.userName = self.userName
+            completeVC.password = self.passwordTextField.text
             self.present(completeVC, animated: true)
         }
         $0.addAction(completeViewAction, for: .touchUpInside)

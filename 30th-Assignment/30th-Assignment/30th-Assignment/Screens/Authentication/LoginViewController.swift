@@ -38,14 +38,10 @@ final class LoginViewController: BaseViewController {
     private lazy var loginButton = InstaButton(title: "로그인").then {
         $0.isEnabled = false
 
-        let completeViewAction = UIAction { _ in
-            let completeVC = CompleteLoginViewController()
-
-            completeVC.modalPresentationStyle = .fullScreen
-            completeVC.userName = self.emailTextField.text
-            self.present(completeVC, animated: true)
+        let LoginAction = UIAction { _ in
+            self.postSignIn()
         }
-        $0.addAction(completeViewAction, for: .touchUpInside)
+        $0.addAction(LoginAction, for: .touchUpInside)
     }
 
     private let signUpLabel = UILabel().then {
@@ -142,6 +138,37 @@ final class LoginViewController: BaseViewController {
     private func textFieldDidChange(_ sender: InstaTextField) {
         /// 도전과제 (2)
         loginButton.isEnabled = [emailTextField, passwordTextField].allSatisfy { $0.hasText }
+    }
+
+    private func postSignIn() {
+        guard let email = emailTextField.text,
+              let password = passwordTextField.text
+        else { return }
+
+        AuthService.shared.requestSignIn(email: email, pw: password) { result in
+            switch result {
+            case .success:
+                    self.makePresentAlert(title: "로그인 성공", nextVC: TabBarController())
+            case .requestErr(let status):
+                guard let status = status as? Int else { return }
+
+                switch status {
+                case 404:
+                    self.makeAlert(title: "이메일에 해당하는 사용자정보가 없습니다.")
+                case 409:
+                    self.makeAlert(title: "비밀번호가 올바르지 않습니다.")
+                default:
+                    self.makeAlert(title: "아이디와 비밀번호를 다시 확인해주세요.")
+                }
+
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
     }
 }
 

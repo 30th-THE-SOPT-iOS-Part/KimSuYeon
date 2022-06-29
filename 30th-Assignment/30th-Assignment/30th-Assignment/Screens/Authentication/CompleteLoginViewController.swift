@@ -19,6 +19,7 @@ final class CompleteLoginViewController: BaseViewController {
             }
         }
     }
+    var password: String?
 
     private let titleLabel = UILabel().then {
         $0.text = "땡땡땡님 Instargram에 \n 오신 것을 환영합니다"
@@ -38,10 +39,7 @@ final class CompleteLoginViewController: BaseViewController {
 
     private lazy var doneButton = InstaButton(title: "완료하기").then {
         let LoginViewAction = UIAction { _ in
-            let tabBarController = TabBarController()
-
-            tabBarController.modalPresentationStyle = .fullScreen
-            self.present(tabBarController, animated: true)
+            self.postSignUp()
         }
         $0.addAction(LoginViewAction, for: .touchUpInside)
     }
@@ -102,5 +100,40 @@ final class CompleteLoginViewController: BaseViewController {
 
         presentingVC.popToRootViewController(animated: true)
         self.dismiss(animated: true)
+    }
+
+    private func postSignUp() {
+        guard let name = userName,
+              let email = userName,
+              let password = password
+        else { return }
+
+        AuthService.shared.requestSignUp(email: email, name: name, pw: password) { result in
+            switch result {
+            case .success:
+                self.makeAlert(title: "회원가입 성공") { UIAlertAction in
+                    guard let presentingVC = self.presentingViewController as? UINavigationController else { return }
+
+                    presentingVC.popToRootViewController(animated: true)
+                    self.dismiss(animated: true)
+                }
+            case .requestErr(let status):
+                guard let status = status as? Int else { return }
+
+                switch status {
+                case 409:
+                    self.makeAlert(title: "동일한 이메일로 생성된 계정이 존재합니다.")
+                default:
+                    self.makeAlert(title: "아이디와 비밀번호를 확인해주세요.")
+                }
+
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
     }
 }
