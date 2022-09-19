@@ -13,6 +13,7 @@ import Then
 final class MakePasswordViewController: BaseViewController {
 
     var userName: String?
+    private var coordinator: MakePasswordCoordinator
 
     private let titleLabel = UILabel().then {
         $0.text = "비밀번호 만들기"
@@ -39,18 +40,27 @@ final class MakePasswordViewController: BaseViewController {
         $0.isEnabled = false
         
         let completeViewAction = UIAction { _ in
-            let completeVC = CompleteLoginViewController()
-
-            completeVC.modalPresentationStyle = .fullScreen
-            completeVC.userName = self.userName
-            completeVC.password = self.passwordTextField.text
-            self.present(completeVC, animated: true)
+            self.coordinator.transitionToComplete(userName: self.userName ?? "", password: self.passwordTextField.text ?? "")
         }
         $0.addAction(completeViewAction, for: .touchUpInside)
     }
 
+    init(coordinator: MakePasswordCoordinator) {
+        self.coordinator = coordinator
+        super.init()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        coordinator.didFinishChildCoordinator()
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

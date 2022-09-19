@@ -12,6 +12,8 @@ import Then
 
 final class LoginViewController: BaseViewController {
 
+    private var coordinator: LoginCoordinator
+
     private let logoImage = UIImageView().then {
         $0.image = ImageLiteral.imgInstagramLogo
         $0.contentMode = .scaleToFill
@@ -56,9 +58,18 @@ final class LoginViewController: BaseViewController {
         $0.titleLabel?.font = .systemFont(ofSize: 14)
 
         let pushSignUpViewAction = UIAction { _ in
-            self.navigationController?.pushViewController(MakeNameViewController(), animated: true)
+            self.coordinator.transitionToMakeName()
         }
         $0.addAction(pushSignUpViewAction, for: .touchUpInside)
+    }
+
+    init(coordinator: LoginCoordinator) {
+        self.coordinator = coordinator
+        super.init()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func viewDidLoad() {
@@ -68,6 +79,11 @@ final class LoginViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         intialize()
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        coordinator.didFinishChildCoordinator()
     }
 
     /// 화면 터치했을 때 텍스트 필드 edit 종료하기
@@ -148,7 +164,9 @@ final class LoginViewController: BaseViewController {
         AuthService.shared.requestSignIn(email: email, pw: password) { result in
             switch result {
             case .success:
-                    self.makePresentAlert(title: "로그인 성공", nextVC: TabBarController())
+                self.makeAlert(title: "로그인성공") { _ in
+                    self.coordinator.transitionToFeed()
+                }
             case .requestErr(let status):
                 guard let status = status as? Int else { return }
 
